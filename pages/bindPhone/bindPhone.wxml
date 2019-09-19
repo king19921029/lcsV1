@@ -1,0 +1,14 @@
+<view class='bg_green' id='box'>
+    <view class='com-width header'>账号绑定</view>
+
+    <view class='com-width'>
+      <input class='phone' bindinput='phoneChange' placeholder-class="phcolor" type='text' placeholder='请输入手机号'></input>
+    </view>
+    <view class='com-width code_box'>
+      <input class='' bindinput='codeChange' type='text' placeholder-class="phcolor" placeholder='请输入验证码'></input>
+      <button class='bg_green code' disabled='{{disabled}}' data-id="2" bindtap="codeTap">{{time}}</button>
+    </view>
+    <view class='com-width footer'>   
+        <view bindtap='bindPhone'>绑定</view>
+    </view>
+</view>

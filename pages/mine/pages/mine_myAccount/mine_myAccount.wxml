@@ -1,0 +1,43 @@
+<view class='myAccount_box border_top_gray'>
+     <view class='com-width border_bottom_gray com-padding space-between'>
+        <view class='med-font'>账户余额</view>
+        <view class='medium_font color_green'>{{user.androidAccountBalance}}</view>
+    </view>
+    <view class='com-width med-font padding_top'>充值</view>
+    <view class='com-width rmb_box'>
+          <view class="rmb {{course_index == index ? 'select_bg' : ''}}" bindtap='course_tab_switch' wx:for="{{rmbData}}" wx:key="" wx:for-index="index" wx:for-item="item" data-index="{{index}}" data-id="{{item.id}}">
+                {{item.name}}
+          </view>
+    </view> 
+    <view class='com-width  com-padding border_bottom_gray border_top_gray'>
+           <view class='med-font buy_type'>支付方式</view> 
+
+          <view class='space-between'>
+              <view class='med-font account_padding'>
+
+                <view class='display-flex'>
+                    <image src='../../../../images/icon/wx.png'></image>
+                    <view>微信支付</view>
+                </view>
+
+                <view class='display-flex'>
+                    <!-- <image src='../../../../images/icon/zfb.png'></image> -->
+                    <!-- <view>支付宝支付</view> -->
+                </view>
+                
+              </view> 
+              <view class='account_padding'>
+                    <radio checked value="微信支付"></radio>
+              </view>   
+          </view>
+        
+    </view>
+     <view class='hw som_font color_gray com-width com-padding border_bottom_gray line_height'>
+        <view>充值须知</view>
+        <view>1、小程序充值金额与Android系统余额通用；苹果用户请到“我是理财师APP”内充值。</view>
+        <view>2、充值金额为虚拟币,充值后不会过期,但无法退款,不可提现或转让他人。</view>
+        <view>3、1元=1学习贝，可用于购买课程。</view>
+        <view>4、充值如遇到问题,请拨打客服热线400-008-9508。</view>
+    </view>
+</view>
+<view class='com-width account_footer bg_red' bindtap='wxBuy'>确认支付</view> 

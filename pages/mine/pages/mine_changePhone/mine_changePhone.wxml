@@ -1,0 +1,34 @@
+<!--输入登录密码  -->
+
+<!-- <view class='mine_changePhone'>
+  <view class='com-width com-padding changePhone_font'>请输入登录密码</view>
+  <view class='password_box border_bottom_gray com-width space-between'>
+      <view>密码</view>
+      <input type='password'></input>
+      <view class='som_font'>忘记密码？</view>
+  </view> 
+  <view class='changePhone_font com-padding next'>下一步</view>
+</view> -->
+
+<!--新手机号  -->
+
+<!-- <view class='new_phone'>
+  <view class='com-width com-padding space-between'>
+    <view class='changePhone_font'>新手机号</view>
+    <view class='som_font'>当前手机号:{{phone}}</view>
+  </view>
+  <view class='password_box border_bottom_gray com-width'>
+      <input type='number' placeholder="请输入新手机号" placeholder-style="color:#a7ddc5;"></input>
+  </view> 
+  <view class='changePhone_font com-padding next'>下一步</view>
+</view> -->
+
+<!-- 验证码 -->
+
+<view class='phone_code'>
+  <view class='com-width code_margin'>验证码发送至 {{phone}}</view>
+  <view class='com-width som_font code_margin'>{{}}秒后重发</view>
+  <view class='com-width som_font code_margin'>
+    <input value='1234'></input>
+  </view>
+</view>

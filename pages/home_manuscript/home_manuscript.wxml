@@ -1,0 +1,285 @@
+<import src="../util/wxParse/wxParse.wxml"/> 
+<!-- 主页  home_isShow-->  
+<!-- <scroll-view scroll-y="{{isScroll}}" scroll-top="{{scrollTops}}" class='manuscript' wx-if="{{home_isShow}}" > -->
+<view class='manuscript'>
+
+    <!-- herder -->
+    <view class='com-width herders'>
+        <!-- <view>下滑</view> -->
+        <view class='mic_type'>
+            <text bindtap='audio_btn_tap' class='audio_btn {{audioBox_isShow? "bg_green": "color_green"}}'>音频</text>
+            <text wx:if="{{cwVideoUrl}}" bindtap='video_btn_tap' class='video_btn {{audioBox_isShow? "color_green": "bg_green"}}'>视频</text>
+        </view> 
+        <!-- <view>分享</view>1 -->
+    </view>    
+
+    <!-- 音视频 -->
+    <view id='mic_video'>
+        <view id='audioBox' wx:if="{{audioBox_isShow}}">
+            <view class='com-width'>
+
+              <view class='audio_animation_box'>
+                <!-- 上一曲 -->
+                <image bindtap='upTap' data-cwid="{{cwId}}" 
+                  class='left_icon mic_icon' src='../../images/music/left_icon.png' 
+                  data-type="{{cwClockStatus}}">
+                </image>
+                
+                <!-- 动画图片 -->
+                <image class='{{animationIsShow ? "animation_img_isShow" : ""}} animation_img' src="{{detailsInfo.tList[0].tHeaderUrl}}">
+                </image>
+
+                <!-- 下一曲 -->
+                <image bindtap='nextTap' data-cwid="{{cwId}}" class='right_icon mic_icon'
+                 src='../../images/music/right_icon.png'>
+                </image>
+
+                <view bindtap='playTap' wx:if='{{isPlay}}' class='audio_img_box isPlay_box'>
+                    <image class='paly_icon' src="../../images/music/play.png">
+                    </image>
+                </view>
+
+                <view bindtap='pauseTap' wx:else class='audio_img_box isPause_box'>
+                  <image class='paly_icon' src="../../images/music/pause.png">
+                  </image>
+                </view>
+                  
+                <slider class='slider' block-size="12" 
+                        bindchange="bindchange" 
+                        min="0" max="{{barWidth}}" 
+                        value="{{sliderValue}}">
+                </slider>
+              </view> 
+
+              <view class='audioBox_bottom'>
+                <view class='audioBox_bottom_title'>
+                    <view class='overflow_wrap'>{{cwTextDetail.cwName}}</view>
+                    <view class='color_gray'>{{cwTextDetail.info}}</view>
+                </view> 
+
+                <view class='audioBox_bottom_time'>
+                  <text class='color_green'>{{playTime}}</text>/<text>{{allTimeCunt}}</text>
+                </view>
+                
+              </view> 
+
+            </view>
+        </view>
+        
+        <view id='videoBox' class='isfixed' wx:else>
+            <view class='com-width'>
+              <view class='audio_animation_box'>
+                  <video class='myVideo' src="{{cwVideoUrl}}" 
+                    bindtimeupdate="videoChange" 
+                    bindplay="videoPlay" 
+                    bindpause="videoPause" 
+                    show-play-btn="false" 
+                    initial-time="{{audio_paly_time}}" 
+                    autoplay controls>
+                  </video>
+              </view> 
+             
+              <view class='audioBox_bottom'>
+                <view>
+                    <view>{{cwTextDetail.cwName}}</view>
+                    <view class='color_gray'>{{cwTextDetail.info}}</view>
+                </view> 
+
+            
+              </view> 
+            </view>
+        </view>
+    </view>
+    
+    <!-- 课程简介及选集 -->
+    <view id='detailsBox'>
+          <!-- title 讲义 选集 -->
+          <view class='border_bottom_gray detailsBox_title'>
+              <view bindtap='detailsBoxJyTap'>
+                <text class='{{detailsBox_title_init ? "border_bottom_green" : ""}}'>讲义</text>
+              </view>
+
+              <view bindtap='detailsBoxCuorTap'>
+                <text class='{{detailsBox_title_init ? "" : "border_bottom_green"}}'>课程选集</text>
+              </view>
+              
+          </view> 
+          <!-- 讲义富文本 -->
+          <scroll-view scroll-y="true" wx:if="{{detailsBox_title_init}}"
+          class='{{windHeight > 650 ? "detalis_scroll_x" : "detalis_scroll"}}  detailsBox_font' >
+              <view style='height:{{textTal}}%'>   
+                    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>  
+                    <view class='manuscript_footer com-padding'>
+                      <image src='../../images/icon/logo.png'></image>
+                      <view class='color_gray'>版权归我是理财师所有，未经允许不得转载</view>
+                    </view>  
+              </view>
+          </scroll-view>
+          <!-- 选集列表 -->
+          <scroll-view class='{{windHeight > 650 ? "detalis_scroll_x" : "detalis_scroll"}}' scroll-y="true" wx:else>
+
+            <view wx:for="{{skuStudyPlanCWList}}" wx:key="" wx:for-item="item">
+                <!-- 音频列表 -->
+              <view wx:if="{{audioBox_isShow}}" 
+              class='{{item.cwId == cwId ? "color_green" : ""}}' >
+                <view bindtap='paly_audio_tap'  
+                  class='detailsBox_mic display-flex border_bottom_gray' 
+                  data-cwClockStatus="{{item.cwClockStatus}}" data-cwid="{{item.cwId}}">
+
+                  <view>
+                    <image wx:if="{{item.cwId != cwId}}" class='audioPic' src='../../images/music/play_0.png'></image>
+                    <image wx:else class='audioPic' src='../../images/music/play_green.png'></image>
+                  </view>
+
+                  <view class='audio_list {{ item.cwClockStatus == 0 ? "color_gray" : "" }}'>
+                    <view>{{item.cwTitle}}</view>
+                    <view class='detailsBox_mic_time' >
+                      <text wx:if="{{item.progress != null}}">{{item.progress}} /</text><text>{{item.cwLength}}</text>
+                    </view>
+                  </view>
+
+                  <view class='last_icon'>
+                    <image wx:if="{{item.cwClockStatus !=1}}" src="../../images/icon/no_text.png"></image>
+                    <image wx:else src="../../images/icon/text.png"></image>
+                    <!-- <text>锁定</text>   -->
+                  </view>
+
+                </view>
+              </view>
+                <!-- 视频列表 -->
+              <view wx:else class='{{item.cwId == cwId ? "color_green" : "color_gray"}}'>
+
+                <view wx:if="{{item.cwLength}}" bindtap='paly_video_tap'  data-cwid="{{item.cwId}}"
+                  class='detailsBox_mic display-flex border_bottom_gray' 
+                  data-cwClockStatus="{{item.cwClockStatus}}" >
+                    
+                    <image class='videoPic' src='{{item.videoPicUrl}}'></image>
+                    <view class='video_right'>
+                      <view class='video_list'>
+                        <view>{{item.cwTitle}}</view>
+                        <view wx:if="{{ item.progress != null }}" class='detailsBox_mic_time'>
+                          <text>{{item.progress}}</text> / <text>{{item.cwLength}}</text>
+                        </view>
+                        <view wx:else class='detailsBox_mic_time'>
+                          <text>未开始</text> / <text>{{item.cwLength}}</text>
+                        </view>
+                      </view>
+                      <image wx:if="{{item.cwClockStatus != '1'}}" class='video_no_text' src="../../images/icon/no_text.png"></image>
+                    </view>
+                    
+
+                </view>
+              </view>
+                
+
+              </view>
+          </scroll-view>
+
+        
+
+    </view>
+                
+    
+    
+    <!-- <video class="com-width my_video" src="{{videoUrl}}" bindplay='videoPlay' bindpause="videoPause" bindtimeupdate="videoChange" wx:if="{{myVideo}}"></video> -->
+    
+
+    <audio class='audio_display com-width' poster="{{poster}}" name="{{name}}" 
+    author="{{author}}" src="{{cwAudioUrl}}" 
+    action="{{action}}" controls></audio>
+
+
+
+    <!--音频  -->
+    <!-- <view class='com-width com-padding mini_audio' wx:if="{{cwTextDetail.cwAudioId}}">
+        
+        <view class='com-padding bg_gray display-flex'>
+          <image class='audio_play com-som-margin-left' wx-if="{{isPlay}}" bindtap='playTap' src='../../../../images/music/play_0.png'></image>
+          <image class='audio_play com-som-margin-left' wx-if="{{isStop}}" bindtap='pauseTap' src='../../../../images/music/music-stop.png'></image>
+          <view class='mini_audio_title som_font com-margin {{ isStop ? "color_green" : "" }}'>音频 | {{videoBase.title}}</view>
+          
+          <view class='som_font color_gray audio_time'>{{allTime}}</view>
+        </view>
+      
+    </view> -->
+
+    <!-- <scroll-view class='scroll_view' scroll-y="{{isScroll}}">   
+             <template is="wxParse" data="{{wxParseData:article.nodes}}"/>  
+    </scroll-view>     -->
+
+   
+
+    <!--播放浮窗  audioIsShow-->
+    <!-- <view class='com_audio bg_green color_f display-flex' wx-if="{{audioIsShow}}">
+
+        
+              <image class='close com-som-margin-left' bindtap='stopTap' src='../../../../images/icon/cl.png'></image>
+          
+
+          <view class='display-flex audio_center_view'>
+              <view>
+                <image class='audio_img border_radius' src='{{cwTextDetail.tHeaderUrl}}'></image>
+               </view> 
+              
+              <view class='com-som-margin-left footer_mic_box .overflow'>
+                    <view class='med-font overflow' bindtap='lessTap'>{{videoBase.title}}</view>
+                    <view class='font_rs overflow'>{{detailsData.tList[0].tName}}·{{detailsData.tList[0].tTitle}}</view>
+              </view>
+          </view>
+
+          <view class='audio_right_view display-flex'>
+         
+              <image class='less' src='../../../../images/icon/less.png' bindtap="lessTap"></image>
+   
+              <image class='audio_play com-som-margin-left' wx-if="{{isPlay}}" bindtap='playTap' src='../../../../images/music/music-start.png'></image>
+              <image class='audio_play com-som-margin-left' wx-if="{{isStop}}" bindtap='pauseTap' src='../../../../images/music/ff_stop.png'></image>
+          </view>
+         
+    </view> -->
+
+    <!--底部logo -->
+    
+</view>
+<!-- </scroll-view >  -->
+    
+
+<!--音频播放页   -->
+<!-- <view animation="{{audio_animation}}" class='audio_box' wx-if="{{audio_isShow}}">
+    <view class='audio_box_header com-width' bindtap='sselTap'>
+        <image src='../../../../images/icon/bottom.png'></image>
+    </view>
+    <image class='com-width' style='height:334rpx;' src='{{detailsData.picUrl}}'></image>
+
+    <view class='audio_box_content'>
+         <view class='audio_box_title'>{{videoBase.title}}</view>
+        <view class='som_font color_gray'>{{detailsData.skuInfo}}</view> 
+    </view>
+    
+    <view class='bar'>
+
+        <slider class='slider' block-size="12" bindchange="bindchange" min="0" max="{{barWidth}}" value = "{{sliderValue}}" />
+        <view class='bar_width space-between som_font color_gray'>
+            <view>{{playTime}}</view>
+            <view>{{allTime}}</view>
+        </view>
+    </view>
+    <view class='btn_box'>
+          <image class='som_img' src='../../../../images/icon/ago.png'></image>
+          <image class="audio_box_play" wx-if="{{isPlay}}" bindtap='playTap' src='../../../../images/music/greenStart.png'></image>
+          <image class="audio_box_play" wx-if="{{isStop}}" bindtap='pauseTap' src='../../../../images/music/music-stop.png'></image>
+          <image class='som_img' src='../../../../images/icon/after.png'></image>
+    </view>
+    <view class='audio_box_footer space-between'>
+          <image src='../../../../images/icon/tab.png' bindtap='goPlayList'></image>
+          <image id='video_bj' src='../../../../images/post/cat.png' wx:if="{{cwTextDetail.cwVideoId}}" bindtap='goVideoCourse'></image> 
+          <image bindtap='sselTap' src='../../../../images/icon/text.png'></image>
+    </view>
+</view> -->
+
+<!-- 视频播放页 -->
+<!-- <view imation="{{audio_animation}}" class='audio_paly_box' wx-if="{{audio_paly_box}}" bindtap='close_audio'>
+    <video class='myVideo' src="{{videoUrl}}" bindtimeupdate="videoChange" 
+      bindplay="videoPlay" bindpause="videoPause" show-play-btn="false" initial-time="{{audio_paly_time}}" autoplay controls>  
+    
+    </video> 
+</view> -->

@@ -1,0 +1,28 @@
+<view class='medal_box'>
+    <view class='medal_headar justify-center'>
+          <image src='{{getUserCertificate.userHeaderUrl}}'></image>
+          <view>{{getUserCertificate.userName}}</view>
+    </view>
+    <view class='justify-center'>
+          <view class='medium_font'>{{getUserCertificate.skuName}}</view>
+          <view class='som_font color_gray get_medal'>恭喜您完成学习，获得毕业勋章</view>
+           <image class='big_img' src='{{getUserCertificate.skuCcUrl}}'></image>   
+    </view>
+    <!-- <swiper class='medal_swipers' indicator-dots='ture'>
+        <swiper-item><image src="../../../../img/lunbo1.png" class="slide-image" width="50%" /></swiper-item>
+        <swiper-item><image src="../../../../img/lubo2.jpeg" class="slide-image" width="50%" /></swiper-item>
+        <swiper-item><image src="../../../../img/lunbo3.jpeg" class="slide-image" width="50%" /></swiper-item> 
+    </swiper>    -->
+    <view class='share'>
+          <image id='first_img' src='../../../../images/icon/wxqfx.png'></image>
+          <image src='../../../../images/icon/wxfx.png'></image>
+          <image src='../../../../images/icon/wbfx.png'></image>
+          <image src='../../../../images/icon/qqfx.png'></image>
+    </view>
+    <view class='medal_footer com-padding com-width'>
+          <view class='display-flex'>
+                  <image src='../../../../images/icon/logo.png'></image>  
+                <view>「 我是理财师 」让理财师更专业</view>
+          </view> 
+    </view>
+</view> 

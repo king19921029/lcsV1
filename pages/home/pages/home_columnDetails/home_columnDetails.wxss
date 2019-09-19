@@ -1,0 +1,15 @@
+
+@import "../../../css/com_details.wxss";
+
+#footer_btn_big{
+  padding: 0 105rpx;
+}
+.footer_btn{
+  font-size: 32rpx;
+  color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 58rpx;
+}

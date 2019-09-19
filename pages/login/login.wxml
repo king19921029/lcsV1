@@ -1,0 +1,29 @@
+<!-- 验证码登录 -->
+ <view class='login bg_green'>
+      <view class='com-padding_som com-width color_fff space-between'>
+          <view class=''>使用密码登录</view>
+          <view>注册</view>
+      </view>
+      <view class=''> 
+        <view class='com-width display-flex com-padding_som border_bottom_gray'>
+          <view>手机号</view>
+          <view><input placeholder='请输入手机号' placeholder-class="phcolor" bindblur='phoneChange'></input></view>
+        </view>
+
+        <view class='com-width display-flex com-padding_som border_bottom_gray' >
+            <view>验证码</view>
+            <view><input bindinput='codeChange' placeholder-class="phcolor" placeholder='请输入验证码'></input></view>
+  
+            <button class='code' disabled='{{disabled}}' data-id="2" bindtap="codeTap">{{time}}</button>
+        </view> 
+      </view>
+       <view bindtap='go_passwordLogin' class='com-width LoginBtn com-padding_som'>使用密码登录</view>
+      <view bindtap='isCode' class='confirm bg_green medium_font com-width'>确定</view>
+     
+      <view class='login_com_footer som_font'>
+          <view class='footer_left'>登录/注册视为同意</view>
+          <view bindtap='userProtocol' class='footer_right'>用户服务协议</view>
+      </view>
+</view>  
+
+

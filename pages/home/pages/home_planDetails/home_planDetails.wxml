@@ -1,0 +1,286 @@
+ <import src="../../../util/wxParse/wxParse.wxml"/> 
+ <view class='planDetails' wx-if="{{home_isShow}}">
+  <!-- <scroll-view scroll-y="{{isScroll}}" class='planDetails' wx-if="{{home_isShow}}" >  -->
+    <!-- 音频迷你播放 -->
+    <view id='mic_icon' wx:if="{{isMicPlay}}" bindtap='mic_iconTap'>
+      <image src='../../../../images/music/mic_icon.png'></image>  
+    </view>
+    <!--banner  -->
+     <view class='banner com-width'>
+        <image src='{{detailsData.picUrl}}'></image>
+    </view>     
+    
+    <!--header  -->
+    <view class='planDetails_header com-width border_bottom_gray'>
+        <view class=''>
+            <view class='medium_font'>{{detailsData.skuName}}</view>
+            <view class='som_font' style='margin-top:6rpx;'>{{detailsData.learnCount}}</view> 
+        </view>
+        <view class='color_gray som_font header_font'>
+            {{detailsData.skuInfo}}
+        </view>
+    </view>  
+
+    <!--people -->
+     <view wx-if="{{detailsData.tList.length == 1}}" class='planDetails_people com-padding com-width border_bottom_gray'>
+        <view class='display-flex'>
+            <view class='people_img'><image class='border_radius' src='{{detailsData.tList[0].tHeaderUrl}}'></image></view>
+            <view class='name_job'>{{detailsData.tList[0].tName}} {{detailsData.tList[0].tTitle}}</view> 
+        </view>
+        <view class='color_gray som_font header_font'>
+            {{detailsData.tList[0].tInfo}}
+        </view>
+    </view>  
+    <!--多个老师  -->
+    <view wx-if="{{detailsData.tList.length > 1}}" class='com-padding_som com-width border_bottom_gray space-between' bindtap='go_teacherDetails'>
+        <view>
+            <image wx:for="{{detailsData.tList}}" wx:key="" wx:for-index="index" wx:for-item="item" class='border_radius people_imgs' src='{{item.tHeaderUrl}}'></image>
+        </view>
+        <view class='display-flex'>
+            <view class='som_font color_gray'>讲师详情</view>
+            <image class='mine_left_img' src='../../../../images/icon/mine_left.png'></image>
+        </view>
+    </view>
+
+    <!--未登录时候的课程内容  -->
+    <view wx:if="{{token == null }}"  class='courseContent border_bottom_gray'>
+      
+        <view class='space-between com-width' style='padding-bottom:30rpx;'>
+            <view class='medium_font'>课程内容</view>
+            <view class='som_font'>共{{classNum}}课时</view>
+        </view>
+
+        <view class='space-between com-width audition_list' 
+          wx:for="{{skuStudyPlanCWList}}" wx:key="" wx:for-index="index" 
+          wx:for-item="item" bindtap='go_manucript' data-id="{{item.cwId}}"  
+          data-status="{{item.cwClockStatus}}" data-cwtype="{{item.cwType}}"
+          data-skuId="{{item.skuId}}" >
+
+              <view class='play_img_box'>
+                  <!--已解锁  -->
+                  <image class='play_img' wx-if="{{item.cwClockStatus == 0}}"
+                   src='../../../../images/music/play_1.png'>
+                  </image>
+                  <!--未解锁  -->
+                  <image  wx:elif="{{item.cwClockStatus == 1 && item.cwType == 0 }}"
+                    class='play_img' src='../../../../images/music/play_0.png'>
+                  </image>
+                  <!-- 答题  -->
+                  <image class='play_img' wx:else
+                    src='../../../../images/music/exam.png'>
+                   </image>
+              </view>
+
+              <view class="{{ item.cwClockStatus == 1 ? '' : 'color_gray' }} content_box com-som-margin-left">
+                  <view class="med-font overflow">
+                    {{item.cwTitle}}
+                  </view>
+                  <view class='font_rs color_gray display-flex'> 
+                    <view class='som_font color_gray'>未开始/{{item.cwLength}}</view>
+                  </view>
+                  
+              </view>
+            
+              <view class='isText_box'>
+                <!--未解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 0 }}"
+                  src='../../../../images/icon/no_text.png'>
+                </image>
+                <!--已解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 1 && item.cwType == 0}}"
+                  src='../../../../images/icon/text.png'>
+                </image>
+
+                <!--考试未解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 1 &&  item.cwType == 1}}"
+                bindtap='go_exam' src='../../../../images/icon/lx.png'>
+                </image>  
+
+                <text class='{{item.cwClockStatus == "1" ? "" : "color_gray" }}' 
+                wx:if="{{item.cwType == 0}}">文稿</text>
+                <text class='{{item.cwClockStatus == "1" ? "" : "color_gray" }}' 
+                wx:else>考试</text>
+                
+              </view>  
+
+        </view>
+
+    </view>
+ 
+    <!-- 登录时候的课程内容 -->
+    <view wx:else class='courseContent border_bottom_gray' >
+        <view class='space-between com-width '>
+            <view class='medium_font'>课程内容</view>
+            <view class='som_font'>共{{classNum}}课时</view>
+        </view>
+
+        <view 
+        class='{{ detailsCwid ==item.cwId ? "color_green" : ""}} space-between com-width audition_list' 
+          wx:for="{{skuStudyPlanCWList}}" wx:key="" wx:for-index="index" 
+          wx:for-item="item" bindtap='go_manucript' data-id="{{item.cwId}}"  
+          data-status="{{item.cwClockStatus}}" data-skuId="{{item.skuId}}" 
+          data-cwtype="{{item.cwType}}" data-qpId='{{item.qpId}}' data-progress="{{item.progress}}">
+
+              <view class='play_img_box'>
+                  <!--已解锁  -->
+                  <image wx-if="{{item.cwClockStatus == 0 && item.cwType == 0}}" 
+                  class='play_img' src='../../../../images/music/play_1.png'>
+                  </image>
+
+                  <!--未解锁  -->
+                  <image  wx-if="{{item.cwClockStatus != 0 && item.cwType == 0 }}" 
+                  class='play_img' src='../../../../images/music/play_0.png'></image>
+
+                  <!-- 答题  -->
+                  <image class='play_img' wx-if="{{item.cwType == 1}}"
+                    src='../../../../images/music/exam.png'>
+                  </image>
+              </view>
+
+              <view class="{{ item.cwClockStatus == 1 ? '' : 'color_gray' }} content_box com-som-margin-left">
+                  <view class="med-font overflow">{{item.cwTitle}}</view>
+                  <view class='display-flex'>
+                  
+                      <view class='som_font'>
+                        <text wx:if="{{ item.cwClockStatus == 1 && item.progress != null }}">{{item.progress}}/</text>
+                        {{item.cwLength}}
+                      </view>
+                  </view>
+                  
+              </view>
+
+              <view class='isText_box'>
+                <!--未解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 0 }}" 
+                  src='../../../../images/icon/no_text.png'>
+                </image>
+                <!--已解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 1 && item.cwType == 0}}"
+                  src='../../../../images/icon/text.png'>
+                </image>
+                <!--考试未解锁  -->
+                <image class='see_img' wx-if="{{item.cwClockStatus == 1 &&  item.cwType == 1}}"
+                bindtap='go_exam' src='../../../../images/icon/lx.png'>
+                </image> 
+
+                <text class='{{item.cwClockStatus == "1" ? "" : "color_gray" }}' 
+                wx:if="{{item.cwType == 0}}">文稿</text>
+                <text class='{{item.cwClockStatus == "1" ? "" : "color_gray" }}' 
+                wx:else>考试</text>
+
+              </view>       
+        </view>
+    </view> 
+    
+
+    <view class='templte_box com-width border_bottom_gray peoples_title com-padding' style='font-size:28rpx;'>
+         <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+    </view> 
+    
+    <!--用户留言  -->
+    <view class='com-width words_box' wx:if="{{skuStudyPlanCommentList.length  != 0 }}">
+      <view class='medium_font com-padding'>用户留言</view>
+
+      <view class='words_box_content' wx:for="{{skuStudyPlanCommentList}}" wx:key="" wx:for-index="index" wx:for-item="item">
+          <view class='space-between'>
+              <view class='display-flex user_img_box'>
+                  <image class='border_radius' src='{{item.userHeaderUrl}}'></image>
+                  <view class='user_name med-font'>{{item.userName}}</view>
+              </view>
+              
+              <view class='som_font words_box_time color_gray'>{{item.userCommentTime}}</view>
+          </view>
+          <view class='som_font user_say color_gray'>{{item.userComment}}</view>
+
+          <view wx-if="{{item.tName}}" class='border_top_gray space-between user_say teacher_say'>
+              <view class='med-font'>{{item.tName}} 回复</view>
+              <view class='som_font color_gray'>{{item.tCommentTime}}</view>
+          </view>
+          <view wx-if="{{item.tComment}}" class='user_say som_font color_gray'>{{item.tComment}}</view>
+      </view>
+
+    </view>
+
+    <!--  付费footer  -->
+    <view wx:if="{{detailsData.isBuy == 0}}" class='footer display-flex bg_fff'>
+        <view class='dialogue' bindtap='lessTap'>
+          <image src='../../../../images/tab/yuedu.png'></image>
+        </view>
+  
+        <view wx:if="{{platform != 'ios' && platform != 'devtools'}}" class='btn_box'>
+              <view class='space-between com-width-som'>
+                  <view class='audition display-flex {{isTestCwid == 0 ? "bg_green" : "bg_grays" }}'
+                      bindtap='testListen'>
+                    <image src='../../../../images/music/playr.png'></image>
+                    <view>试听</view>
+                  </view>
+                  <view wx:if="{{skuSubjectDetailInfo.price == 0}}" class='bg_red footer_btn' bindtap='go_buy'>{{skuSubjectDetailInfo.priceStr}}</view>
+                  <view wx:else class='bg_red footer_btn' bindtap='go_buy'>{{skuSubjectDetailInfo.priceStr}} 立即购买</view>
+              </view>
+        </view>
+
+        <view wx:else class='btn_box'>
+              <view class='space-between com-width-som'>
+                  <view class='audition display-flex {{isTestCwid == 0 ? "bg_green" : "bg_grays" }}'
+                      bindtap='testListen'>
+                    <image src='../../../../images/music/playr.png'></image>
+                    <view>试听</view>
+                  </view>
+                  <view wx:if="{{skuSubjectDetailInfo.price == 0}}" class='bg_red footer_btn' bindtap='go_buy'>{{skuSubjectDetailInfo.priceStr}}</view>
+                  <view wx:else class='bg_red footer_btn' bindtap='ios_go_buy'>查看详情</view>
+              </view>
+        </view>
+    </view>   
+
+    <!-- 购买之后的footer -->
+    <view wx:else class='footer display-flex bg_fff'>
+        <view class='dialogue' bindtap='lessTap'>
+          <image src='../../../../images/tab/yuedu.png'></image>
+        </view>
+        <view class='success_footer display-flex'>
+            <view class='success_footer_box'>
+                <view class='display-flex som_font success_footer_font space-between'>
+                  <view class='color_gray'>{{detailsData.progressStr}}</view>
+                  <!-- <view class='color_gray'>未毕业</view> -->
+                </view>
+                <progress percent="{{detailsData.progress / detailsData.totalCount * 100}}" color="#01ae79" />
+               
+            </view>
+            <image wx:if="{{detailsData.progress / detailsData.totalCount == 1}}" src='../../../../images/icon/selectCollection.png'></image>
+            <image wx:else src='../../../../images/icon/collection-anti.png'></image>
+        </view>
+    </view> 
+
+    <!--  免费学习footer  -->
+    <!-- <view wx:if="{{detailsData.isBuy == 1}}" class='footer display-flex bg_fff'>
+        <view class='dialogue' bindtap='lessTap'>
+            <image src='../../../../images/tab/yuedu.png'></image>
+        </view>
+        <view class='btn_box'>
+              <view class='space-between com-width-som'>
+                  <view class='bg_green audition display-flex' bindtap='go_manucript'>
+                    <image src='../../../../images/music/playr.png'></image>
+                    <view>试听</view>
+                  </view>
+                  <view class='bg_red footer_btn' bindtap='go_buy'>{{detailsData.priceStr}}</view>
+              </view>
+        </view>
+    </view>         -->
+
+    
+
+  <!-- </scroll-view>  -->
+  </view>
+<!--留言板块-->
+<view class='words_modules bg_gray' animation="{{words_animation}}" wx-if="{{words_isShow}}">
+      <view class='bg_fff com-padding_som'>
+        <view class='com-width space-between'>
+            <view class='som_font' bindtap='sselTap'>取消</view>
+            <view>写留言</view>
+            <view class='som_font color_green' bindtap='sendUserComment'>提交</view>
+        </view>
+      </view>
+      <view class="section bg_fff">
+          <textarea bindinput='userSay' placeholder="欢迎参与交流，留言将由作者筛选后显示" />
+      </view>
+</view>

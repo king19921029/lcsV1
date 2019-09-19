@@ -1,0 +1,29 @@
+/*今日学习有课程时*/
+.study_content{
+  height:100vh;
+  width: 95%;
+  margin-left: 5%;
+  border-left: 1px solid #f2f2f2;
+}
+.content_title{
+  text-indent: 44rpx;
+  position: relative;
+}
+.round{
+  display: block;
+  background:#00ae77;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: -13rpx;
+  top: 38rpx;
+}
+.my_study image{
+  height: 33rpx;
+  width: 33rpx;
+  margin-right: 20rpx;
+}
+.my_study_title{
+  margin-bottom: 6rpx;
+}

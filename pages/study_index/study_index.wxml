@@ -1,0 +1,183 @@
+
+
+<scroll-view scroll-y="{{isScroll}}" class='study_box'>
+  <view id='mic_icon' wx:if="{{isMicPlay}}" bindtap='mic_iconTap'>
+      <image src='../../images/music/mic_icon.png'></image>  
+  </view>
+  <!-- header -->
+  <view class='border_bottom_gray'>
+    <view class='header space-between com-width'>
+        <view class='big_font'>学习</view>
+        <view class='list-box space-around'>
+          
+            <view class="{{currentTab == index ? 'border-bottom' : ''}}" wx:for="{{items}}" wx:key="" wx:for-index="index" wx:for-item="item"  data-index="{{index}}" bindtap='tab_switch'>
+              {{item.title}}
+            </view>
+        </view>
+    </view>
+  </view>
+ 
+  <!--未学完  -->
+  <view wx-if="{{ currentTab == 0 }}" class=''>
+        <!--有课程的时候  -->
+        <view class='study_content' 
+        wx:if="{{getUserTodayPlanList != null && getUserTodayPlanList != ''}}">
+          <view wx:for="{{getUserTodayPlanList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+            <view bindtap='com_tap' data-text="{{itemSon.linkText}}" data-type="{{itemSon.linkType}}">
+
+              <view class='com-width com_list'>
+                  <view class='phone'><image lazy-load="true" src='{{itemSon.picUrl}}'></image></view>
+
+                  <!-- 中间 -->
+                  <view class='msg'>
+                      <view class='msg_headr'>
+                        <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                        {{itemSon.cwTitle}} 
+                      </view>
+                      <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='color_green' wx:if="{{itemSon.label}}">
+                          <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+                      </view>
+                      <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+                  </view>
+
+                  <!-- 右边 -->
+                  <view class='com_list_rigth'>
+                        <view class='color_gray'>
+                            <!-- <view class='isBuy color_cheng'>已订阅</view> -->
+                            <view>{{itemSon.progress}}</view>
+                        </view>
+                  </view>
+              </view>
+              
+            </view>
+          </view>
+        </view>
+
+         <!--没有课程的时候  -->
+        <view class='isNone' wx:elif="{{code == 0}}">
+              <image lazy-load="true" class='today_img' src='../../images/icon/mycont.png'></image>
+              <view class='isNone_header'>您还没有添加课程</view>
+              <view class='isNone_font color_gray'>
+                您的课程会智能推送到这里，用过科学的课程搭配与系统的金融知识让你每天都在成长
+              </view>
+              <view bindtap='go_home' class='isNone_btn bg_green color_f'>
+                制定学习课程
+              </view>
+        </view>  
+        
+        <!--未登录的时候  -->
+        <view class='isNone' data-code="{{code}}" wx:else >
+             
+              <image lazy-load="true" class='today_img' src='../../images/icon/mycont.png'></image>
+              <view class='isNone_header'>你还没有登录</view>
+              <view class='isNone_font color_gray'>
+                登录后你未学完的课程会推送到这里，坚持学习，让你每天都在成长
+              </view>
+              <view bindtap='go_login' class='isNone_btn bg_green color_f'>
+                立即登录
+              </view>
+        </view>  
+
+       
+  </view>
+
+  <!--已学完  -->
+  <view wx-if="{{ currentTab == 1 }}" class='course'>
+    <view wx:if="{{token != '' && token != null && getUserTodayPlanList != ''}}"
+      class='study_content'>
+          <view wx:for="{{getUserTodayPlanList}}" wx:key="" 
+            wx:for-index="index" wx:for-item="itemSon">
+            <view bindtap='com_tap' data-text="{{itemSon.linkText}}" 
+              data-type="{{itemSon.linkType}}">
+
+              <view class='com-width com_list'>
+                  <view class='phone'><image lazy-load="true" src='{{itemSon.picUrl}}'></image></view>
+
+                  <!-- 中间 -->
+                  <view class='msg over_msg'>
+                      <view class='msg_headr'>
+                        <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                        {{itemSon.cwTitle}} 
+                      </view>
+                      <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='color_green' wx:if="{{itemSon.label}}">
+                          <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+                      </view>
+                      <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+                  </view>
+
+                  <!-- 右边 -->
+                  <view class='com_list_rigth'>
+                        <view class='color_green'>
+                            <!-- <view class='isBuy color_cheng'>已订阅</view> -->
+                            <view>
+                              <!-- {{itemSon.price}} -->
+                                                            
+                            </view>
+                        </view>
+                        <view class='lh_view overflow color_gray'>
+                          <!-- {{itemSon.learnCount}} -->
+                        </view>
+                  </view>
+              </view>
+              
+            </view>
+          </view>
+    </view>
+
+     <!--没有课程的时候  -->
+    <view wx:else class='isNone'>
+          <image class='today_img' src='../../images/icon/mycont.png'></image>
+          <view class='isNone_header'>您还没有学完任何课程</view>
+          <view class='isNone_font color_gray'>
+            为了体现您的良好学习习惯，请抓紧时间学习吧
+          </view>
+    </view>  
+  </view>   
+  
+
+  <!-- 成长 -->
+  <view wx-if="{{ currentTab == 2 }}" class='grow'>
+        <view class='border_bottom_gray grow_header'>
+            <view class='space-between com-width'>
+                <view>累计学习时长</view>
+                <view class='color_gray'>{{getUserGrowupInfo.totalTime}}</view>
+            </view>
+        </view>
+
+        <view class='echars_img'>
+            <canvas style="width:100%; height:100%;" canvas-id="columnCanvas"></canvas>
+        </view>
+
+        <view class='border_bottom_gray com-padding_som'>
+            <view class='space-between com-width'>
+                <view>最近7天学习时长</view>
+                <view class='color_gray'>{{getUserGrowupInfo.near7DayTime}}</view>
+            </view>
+        </view> 
+
+        <view class='com-padding_som border-bottom-fa'>
+            <view class='space-between com-width'>
+                <view>累计学习天数</view>
+                <view class='color_gray'>{{getUserGrowupInfo.totalDay}}</view>
+            </view>
+        </view>
+
+        <!-- <view class='border_bottom_gray com-padding_som' bindtap='go_history'>
+            <view class='space-between com-width'>
+                <view>已学完的课程</view>
+                <view class='color_gray'>{{getUserGrowupInfo.finishSkuCount}}</view>
+            </view>
+        </view>  -->
+
+        <!-- <view class='com-padding_som'>
+            <view class='space-between com-width' bindtap='go_history'>
+                <view>历史学习记录</view>
+                <view class='color_gray'>不显示任何数字</view>
+            </view>
+        </view>  -->
+  </view>
+
+
+</scroll-view>

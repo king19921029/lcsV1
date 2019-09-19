@@ -1,0 +1,11 @@
+{
+  "appDir": "./App",
+  "cos":{
+    "appid": "1256119880",
+    "bucketname": "lxjy-1256119880",
+    "folder": "/icon", 
+    "region": "ap-beijing", 
+    "secret_id": "AKID88wY5TrusgHgtuqPrAKH2d1DVgeQgUK4",
+    "secret_key": "jGbjfOxJSTPErIWq00nTx6A3oMirreFd"      
+  }
+}

@@ -1,0 +1,17 @@
+/*课程列表 */
+.courseContent{
+  
+}
+.audition_list{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #F2F2F2;
+}
+.play_img{
+  width: 70rpx;
+  height: 70rpx;
+}
+.see_img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}

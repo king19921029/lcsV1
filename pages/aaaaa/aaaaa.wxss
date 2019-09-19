@@ -1,0 +1,53 @@
+#box{
+  width: 100%;
+  border-top: 1px solid #ddd;
+  overflow: hidden;
+  height: 0;
+  animation-fill-mode: forwards;
+}
+
+#item_list{
+    background-color: white;
+    width: 100%;
+}
+
+#item_list view{
+    text-align: center;
+    overflow: auto;
+    white-space: nowrap;
+    background: #faa;
+}
+/* 下来 */
+@keyframes slidedown{
+    from {
+        height: 0;
+    }
+    to {
+        height: 240rpx;
+    }
+}
+/* 上去 */
+@keyframes slideup{
+    from {
+        height: 240rpx;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.open{
+    animation: slidedown 1s;
+}
+
+.close{
+    animation: slideup 1s; 
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}

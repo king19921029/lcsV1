@@ -1,0 +1,94 @@
+<view class='result_box'>
+    <!-- 测试结果 -->
+    <view class='res'>
+        <view class='com-width space-between com-padding'>
+          <text class='medium_font'>测试结果</text>
+          <view class='num_view medium_font'>
+              <text>得分： </text>
+              <text wx-if="{{userQuestionResult.historyPoint<59}}" class='color_red'>{{userQuestionResult.historyPoint}}分</text>
+              <text wx-if="{{userQuestionResult.historyPoint>59}}" class='color_green'>{{userQuestionResult.historyPoint}}分</text>
+          </view> 
+        </view>  
+    </view>
+    <!-- 选项分析 -->
+    <view class='answer_options' wx:for="{{userQuestionResult.qList}}" wx:key="" wx:for-index="index" wx:for-item="item">
+          <!-- 小图标 -->
+          <view class='icon_block'>
+            <image class='yes_img' wx-if="{{item.isTrue == 1}}" src='../../../../images/icon/yes.png'></image>
+            <image class='no_img' wx-if="{{item.isTrue == 0}}" src='../../../../images/icon/no.png'></image>
+          </view>
+          
+          <view class='content'>
+            <view wx-if="{{item.isTrue == 1}}" class='color_green font_rb answer_title'>
+              {{index+1}}、{{item.qName}}
+            </view>
+            <view wx-if="{{item.isTrue == 0}}" class='color_red font_rb answer_title'>
+              {{index+1}}、{{item.qName}}
+            </view>
+            
+            <!--选项  -->
+            <view wx-if="{{item.qType == 0}}" class='options som—font'>
+              <view wx:for="{{item.aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+                <text wx:if='{{itemSon.showType == 0}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+                 <text class='color_green' wx:if='{{itemSon.showType == 1}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+                 <text class='color_red' wx:if='{{itemSon.showType == 2}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+              </view>
+            </view>
+
+            <!--选项  -->
+            <view wx-if="{{item.qType == 1}}" class='options som—font'>
+              <view wx:for="{{item.aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+               <text wx:if='{{itemSon.showType == 0}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+                 <text class='color_green' wx:if='{{itemSon.showType == 1}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+                 <text class='color_red' wx:if='{{itemSon.showType == 2}}'>
+                  {{itemSon.code}}.{{itemSon.aText}}
+                </text>
+              </view>
+            </view>
+
+            <!--解析  -->
+            <view class='correct'>
+                <view class='color_green med-font yes'>正确答案：{{item.tAnswer}}</view>
+                <view class='analysis'>
+                   {{item.parse}}
+                </view>
+            </view> 
+          </view>
+
+          
+    </view>
+</view>
+
+<!--习题测试时的footer  -->
+ <!-- <view class='res_footer bg_fff border_top_gray'>
+      <view class='com-width space-between footer'>
+           <view class='bg_red left_view'>再考一次</view>
+            <view class='right_view bg_green'>继续学习</view>
+      </view>
+</view>  -->
+
+<!--考试未通过时的footer  -->
+<!-- <view class='res_footer bg_fff border_top_gray'>
+      <view class='com-width space-between footer'>
+           <view class='bg_red left_view'>再考一次</view>
+            <view class='d_right_view'>领取毕业勋章</view>
+      </view>
+</view> -->
+
+<!-- 考试通过时的footer -->
+ <view class='res_footer bg_fff border_top_gray'>
+      <view class='com-width space-between footer'>
+           <view class='bg_red left_view' bindtap='recur'>再考一次</view>
+            <view class='bg_green right_view' bindtap='go_medal'>继续学习</view>
+      </view>
+</view> 

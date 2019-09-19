@@ -1,0 +1,43 @@
+<!--修改密码  -->
+ <!-- <view class='revisePassword bg_gray'>
+      <view class='bg_fff'> 
+        <view class='com-width medium_font com-padding_som border_bottom_gray'>
+            请输入登录密码
+        </view>
+
+        <view class='com-width space-between com-padding_som'>
+            <view><input type='password' placeholder='密码'></input></view>
+            <view class='code'>忘记密码？</view>
+        </view> 
+      </view>
+      
+      <view class='confirm bg_green com-width'>下一步</view>
+</view>  -->
+
+<!--新手机号  -->
+ <!-- <view class='revisePassword bg_gray'>
+      <view class='bg_fff'> 
+        <view class='com-width space-between com-padding_som border_bottom_gray'>
+            <view class='medium_font'>新手机号</view> 
+            <view class='som_font'>当前手机号：18801287297</view>
+        </view>
+
+        <input type='password' class='com-width space-between com-padding_som' placeholder='请输入新手机号'></input>
+      </view>
+      
+      <view class='confirm bg_green com-width'>下一步</view>
+</view> -->
+
+<!--验证码  -->
+ <view class='revisePassword bg_gray'>
+      <view class='bg_fff'> 
+        <view class='com-width space-between com-padding_som border_bottom_gray som_font'>
+            <view class=''>验证码发送至18801287298</view> 
+            <view class=''>59秒后重发</view>
+        </view>
+
+        <input class='com-width space-between com-padding_som' placeholder='请输入6位验证码'></input>
+      </view>
+      
+      <view class='confirm bg_green com-width'>下一步</view>
+</view>

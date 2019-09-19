@@ -1,0 +1,57 @@
+<view class='buy_box' wx:if='{{isShow}}'>
+         <view class='border_top_gray border_bottom_gray bg_fff'>
+          <view class='com-width buy_header_font com-padding '>购买内容</view>
+        </view> 
+
+        <!--商品  -->
+         <view class='bg_fff'>
+            <view class='com-width buy_shop'>
+              <view class='phone'><image src='{{shopData.tList[0].tHeaderUrl}}'></image></view>
+              <view class='msg'>
+                  <view class='msg_headr'>{{shopData.skuName}}</view>
+                  <view class='msg_font color_gray'>{{shopData.skuInfo}}</view>
+                  <view class='msg_people color_green'>{{shopData.priceStr}}</view>
+              </view>
+            </view>
+        </view> 
+        
+         <view class='border_bottom_gray bg_fff som_margin'>
+              <view class='com-width buy_header_font com-padding '>支付方式</view>
+        </view> 
+        
+        <!-- 支付方式 -->
+        <view class='buy_type bg_fff'>
+
+              <view class='com-width display-flex'>
+                  <image class='img_type' src='../../../../images/icon/ye.png'></image>
+                  <view class='space-between com-padding_som com_type border_bottom_gray'>
+                  <view class='font_rb'>
+                    余额：
+                    <text class='color_green'>{{money}}</text>
+                    <text wx-if="{{shopData.price > cuntMoney}}" class='color_red'>（余额不足）</text>
+                  </view>
+                        <radio size="44" bindtap='yebTap' checked="{{yeBtn}}"></radio>
+                  </view>
+              </view>
+        </view> 
+
+        <!--购买须知  -->
+        <view class='som_font color_gray com-width notice com-padding_som'>
+            <view class='notice_title'>购买须知</view>
+            <view>你将购买的商品为虚拟服务,购买后不支持退订、转让、退换、请酌情确认</view>
+        </view>
+        <!-- 确认支付 -->
+        <view class='bg_fff buy_box_footer'>
+        
+          <view wx:if="{{shop_price > cuntMoney}}"  bindtap='go_recharge' class='com-width bg_green color_f confirm_buy'>
+            充值中心
+          </view>
+
+           <view wx:else bindtap='yebTap' class='com-width bg_red color_f confirm_buy'>
+            
+            <text wx:if="shopData.priceStr == '免费订阅'">{{shopData.priceStr}}</text>
+            <text wx:else>{{shopData.priceStr}} 确认支付</text>
+          </view>
+
+        </view>
+</view>

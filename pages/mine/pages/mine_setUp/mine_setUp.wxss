@@ -1,0 +1,20 @@
+.mine_setUp{
+  height: 99vh;
+}
+.mine_setUp>view{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.mine_setUp image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.border_bottom_gray{
+  background: #fff;
+}
+.marginTop{
+  margin-top: 20rpx;
+}
+.setUp_footer{
+  text-align: center;
+}

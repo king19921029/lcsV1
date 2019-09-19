@@ -1,0 +1,132 @@
+.bg_gray{
+  background: gray;
+  color: #fff;
+}
+.exam_box{
+  border-top: 1px solid #ededed;
+  /* height: 99vh; */
+  padding-bottom: 180rpx;
+}
+.exam_title{
+  font-size: 40rpx; 
+}
+.exam_com_css{
+  border-bottom: 1px solid #ededed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 92%;
+  margin-left: 4%;
+  padding: 40rpx 0;
+  font-weight: bold;
+}
+.examName{
+  width: 80%;
+}
+.examType{
+  width: 20%;
+  text-align: end;
+}
+.radio_size{
+  font-size: 34rpx;
+}
+.exam_footer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 40rpx;
+}
+.exam_footer view{
+  width: 45%;
+  padding:20rpx 0;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size:28rpx;
+}
+.opt_box{
+  display: flex;
+}
+.radio_group_box radio-group{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.more_cunt_title,.more_cunt_radio{
+  display: flex;
+  flex-direction: column;
+  width:12%;
+  height: 100%;
+}
+
+radio,checkbox{
+  transform:scale(0.8);
+}
+.more_cunt_title{
+  width:100%;
+}
+.radio_size{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ededed;
+  width:92%;
+  margin-left: 4%;
+}
+.more_radio_size{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ededed;
+  width:92%;
+  margin-left: 4%;
+}
+.more_radio_size text{
+  display: block;
+  width: 80%;
+  height: 120rpx;
+  line-height: 120rpx;
+}
+.opt{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border:1px solid #00ae77;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.yes_opt{
+  width: 20rpx;
+  height: 20rpx;
+  background: #00ae77;
+  border-radius: 50%;
+}
+.radio_size text{
+  display: block;
+  width: 80%;
+  padding: 30rpx 0;
+}
+.radio{ 
+  height: 100%;
+  border-bottom: 1px solid #ededed;
+  display: block;
+}
+.more_radio{
+  height: 120rpx;
+  line-height: 120rpx;
+  border-bottom: 1px solid #ededed;
+  display: block;
+}
+/*多选时  */
+.som_cunt_title{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+checkbox{
+  border: none;
+}

@@ -1,0 +1,56 @@
+
+.justify-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.medal_headar{
+    margin:50rpx 0 50rpx 0;
+}
+.medal_headar image{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+.get_medal{
+  margin-top: 10rpx;
+}
+.big_img{
+  margin-top: 30rpx;
+}
+.share{
+  width: 80%;
+  margin-left: 10%;
+  display: flex;
+  margin-top: 15rpx; 
+  justify-content: space-around;
+}
+.share image{
+  width: 100rpx;
+  height: 100rpx;
+}
+/*轮播*/
+.medal_swipers{
+  width:60%;
+  margin-left:20%;
+  height: 540rpx;
+}
+
+/*footer*/
+.medal_footer{
+  position:fixed;
+  left: 0;
+  bottom: 0;
+  right:0;
+  border-top:1px solid #F2F2F2;
+}
+.medal_footer>view{
+  font-size: 34rpx;
+  justify-content: center;
+}
+.medal_footer image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-right: 30rpx;
+}

@@ -1,0 +1,105 @@
+<view>
+   <!--课程内容  -->
+    <view class='courseContent border_top_gray'>
+        <view class='space-between com-width audition_list'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>试听 · 婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+              <image class='see_img'  bindtap='go_manucript' src='../../../../images/icon/text.png'></image>
+        </view>
+        <view class='space-between com-width audition_list'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>试听 · 婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+              <image class='see_img' src='../../../../images/icon/text.png'></image>
+        </view>
+         <view class='space-between com-width audition_list'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>试听 · 婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+              <image class='see_img' src='../../../../images/icon/text.png'></image>
+        </view>
+         <view class='space-between com-width audition_list'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>试听 · 婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+              <image class='see_img' src='../../../../images/icon/text.png'></image>
+        </view>
+        <!--播放浮窗  -->
+        <view class='com_audio bg_green color_f display-flex' wx-if="{{audioIsShow}}">
+              <!--关闭  -->
+              <view class='audio_left_view'>
+                  <image class='close com-som-margin-left' bindtap='stopTap' src='../../../../images/icon/cl.png'></image>
+              </view>
+              
+              <!-- 头像 -->
+              <view class='display-flex audio_center_view'>
+                  <view>
+                    <image class='audio_img'  src='../../../../images/avatar/5.png'></image>
+                  </view>
+                
+                  <view class='com-som-margin-left footer_mic_box .overflow'>
+                        <view class='med-font overflow'>彩礼与嫁妆那点事儿</view>
+                        <view class='som_som_font overflow'>朱熹 · 我的理财方法论</view>
+                  </view>
+              </view>
+
+              <view class='audio_right_view display-flex'>
+                  <!--上拉  -->
+                  <image class='less' src='../../../../images/icon/less.png' bindtap="lessTap"></image>
+                  <!--播放  -->
+                  <image class='audio_play com-som-margin-left' wx-if="{{isPlay}}" bindtap='playTap' src='../../../../images/music/music-start.png'></image>
+                  <image class='audio_play com-som-margin-left' wx-if="{{isStop}}" bindtap='pauseTap' src='../../../../images/music/music-stop.png'></image>
+              </view>
+            
+        </view>
+    </view> 
+</view>
+
+<!--播放页  -->
+<view animation="{{audio_animation}}" class='audio_box' wx-if="{{audio_isShow}}">
+    <view class='audio_box_header com-width' bindtap='sselTap'>
+        <image src='../../../../images/icon/bottom.png'></image>
+    </view>
+    <image class='com-width' style='height:350rpx;' src='../../../../images/post/bl.png'></image>
+
+    <view class='audio_box_content'>
+        <view class='audio_box_title'>1.如何理解风险投资</view>
+        <view class='som_font color_gray'>风险投资啊啊啊</view>
+    </view>
+    <view class='bar'>
+        <!-- <slider max="{{totalProcessNum}}" min="0" value="{{true}}" disabled="{{canSlider}}"></slider> -->
+        <slider class='bar_width' block-size="12" bindchange="slider4change" min="0" max="{{barWidth}}" value = "{{numPlay}}" />
+        <view class='bar_width space-between som_font color_gray'>
+            <view>{{playTime}}</view>
+            <view>{{allTime}}</view>
+        </view>
+    </view>
+    <view class='display-flex btn_box'>
+          <image class='som_img' src='../../../../images/icon/ago.png'></image>
+          <image class="audio_box_play" wx-if="{{isPlay}}" bindtap='playTap' src='../../../../images/music/music-start.png'></image>
+          <image class="audio_box_play" wx-if="{{isStop}}" bindtap='pauseTap' src='../../../../images/music/music-stop.png'></image>
+          <image class='som_img' src='../../../../images/icon/after.png'></image>
+    </view>
+    <view class='audio_box_footer space-between'>
+          <image src='../../../../images/icon/tab.png'></image>
+           <image id='video_bj' src='../../../../images/post/cat.png' bindtap='goVideoCourse'></image> 
+          <image src='../../../../images/icon/text.png'></image>
+    </view>
+</view>

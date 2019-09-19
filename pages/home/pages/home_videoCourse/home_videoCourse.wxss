@@ -1,0 +1,21 @@
+
+.videoCourse_title{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+.videoCourse_list{
+  height:150rpx;
+  padding-bottom: 50rpx;
+}
+.videoCourse_list>view{
+  height: 150rpx;
+}
+.videoCourse_list image{
+  width: 220rpx;
+  height:150rpx;
+  margin-right: 30rpx;
+}
+.list_title{
+  height: 75%;
+}

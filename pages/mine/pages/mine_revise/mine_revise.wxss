@@ -1,0 +1,22 @@
+.revise_box{
+  font-size: 32rpx;
+  height: 99vh;
+}
+.marginTop{
+  margin-top: 20rpx;
+}
+.revise_box>view{
+  background: #fff;
+}
+.revise_box input{
+  text-align: end;
+}
+.revise_box image{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+picker{
+  width: 50%;
+  text-align: end;
+}

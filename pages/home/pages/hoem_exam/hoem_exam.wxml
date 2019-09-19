@@ -1,0 +1,122 @@
+<view class='exam_box' wx:if="{{hoem_isShow}}">
+      <!-- 考题 -->
+      <view class='exam_com_css'>
+          <!-- 考题 -->
+          <view class='exam_title font-weight'>
+            {{questionDetail.qpName}}
+          </view>
+          <!-- 题号 -->
+          <view class='font_sr font-weight'>
+            {{cunt+1}}/{{questionDetail.qpCount}}
+          </view>
+      </view>
+      <!-- 考题类型 单选or多选 -->
+      <view class='exam_com_css'>
+        <view class='font_rb examName'>
+          {{cunt+1}}.{{questionDetail.qList[cunt].qName}}
+        </view>
+        <view class='font_rb examType' 
+          wx-if="{{questionDetail.qList[cunt].qType == 0 }}">
+          单选题
+        </view>
+        <view wx-if="{{questionDetail.qList[cunt].qType == 1 }}" class='font_rb'>
+          多选题
+        </view>
+      </view>
+        
+      <!-- 多选时 -->
+      <!-- <view class='display-flex' wx-if="{{questionDetail.qList[cunt].qType == 1 }}">
+          <view class='more_cunt_title'>
+            <view class='more_radio_size' wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+              <text> {{itemSon.code}}.{{itemSon.aText}}</text>
+            </view>
+          </view>
+            
+            <checkbox-group class="more_cunt_radio" wx:for-item="itemSon" data-name="{{questionDetail.qList[cunt].qName}}" bindchange="moreChange">
+              <label class="more_radio" wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+                <checkbox value="{{itemSon.code}}" checked="{{isChecked}}"/>
+              </label>
+            </checkbox-group>
+
+      </view> -->
+
+      <!--单选时  -->
+      <!-- <view class='opt_box' wx-if="{{questionDetail.qList[cunt].qType == 0 }}">
+          <view class='more_cunt_title'>
+            <view class='radio_size' wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+              <text>{{itemSon.code}}.{{itemSon.aText}}</text>
+            </view>
+          </view>
+
+          <view class='radio_group_box'>
+            <radio-group class="" wx:for-item="itemSon" 
+              data-name="{{questionDetail.qList[cunt].qName}}" bindchange="radioChange">
+              <label class="radio" wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+                <radio size="10" value="{{itemSon.code}}" checked="{{isChecked}}" />
+              </label>
+            </radio-group>
+          </view>
+          
+
+      </view>  -->
+
+      <!-- 多选时 -->
+      <view class='opt_box' wx-if="{{questionDetail.qList[cunt].qType == 1 }}">
+          <view class='more_cunt_title'>
+            <view class='radio_size' bindtap='more_radio' wx:for="{{questionDetail.qList[cunt].aList}}" data-btnid="{{itemSon.code}}" data-checked="{{itemSon.checked}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+              <text> {{itemSon.code}}.{{itemSon.aText}}</text>
+              <view class='opt'>
+                <view class='{{itemSon.checked ? "yes_opt" :""}}'></view>
+              </view>
+            </view>
+          </view>
+            
+      </view>
+
+       <!--单选时  -->
+      <view class='opt_box' wx-if="{{questionDetail.qList[cunt].qType == 0 }}">
+          <!-- 选项 -->
+          <view class='more_cunt_title'>
+            <view class='radio_size' data-checked="{{itemSon.checked}}" data-btnId="{{itemSon.code}}" bindtap='radio_tap' wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+              <text>{{itemSon.code}}.{{itemSon.aText}}</text>
+              <view class='opt'>
+                  <view class='{{itemSon.checked ? "yes_opt" :""}}'></view>
+              </view>
+            </view>
+          </view>
+
+          <!-- 按钮 -->
+          <!-- <view class='radio_group_box'>
+            <radio-group class="" wx:for-item="itemSon" 
+              data-name="{{questionDetail.qList[cunt].qName}}" bindchange="radioChange">
+              <label class="radio" wx:for="{{questionDetail.qList[cunt].aList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+                <radio size="10" value="{{itemSon.code}}" checked="{{isChecked}}" />
+              </label>
+            </radio-group>
+          </view> -->
+          
+
+      </view> 
+
+      <!--第一次进入的footer  -->
+      <view class='exam_footer com-width space-between' wx-if="{{cunt==0}}">
+          <view class='bg_red' bindtap='back_tap'>学学再考</view>
+          <view class='bg_green' bindtap='nextExam'>下一题</view>
+          <!-- <view class='bg_gray' wx:else>下一题</view> -->
+      </view> 
+
+      <!--第二题进入的footer  -->
+      <view class='exam_footer com-width space-between' wx-if="{{cunt>0}}">
+          <view class='bg_red' bindtap='upExam'>上一题</view>
+          <view class='bg_green' bindtap='nextExam'>下一题</view>
+          <!-- <view class='bg_gray' wx:else>下一题</view> -->
+      </view> 
+
+      <!--最后一题footer  -->
+      <view class='exam_footer com-width space-between' wx-if="{{cunt == questionDetail.qpCount-1}}">
+          <view class='bg_red' bindtap='upExam'>上一题</view>
+          <view class='bg_green last_exam' bindtap='go_result'>提交</view>
+          <!-- <view class='bg_gray'>提交</view> -->
+      </view> 
+        
+</view>

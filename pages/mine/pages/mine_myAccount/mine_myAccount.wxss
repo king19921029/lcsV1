@@ -1,0 +1,65 @@
+
+.myAccount_box{
+  height: 110vh;
+}
+
+.rmb_box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 40rpx;
+}
+
+.rmb{
+  width: 30%;
+  font-size: 32rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #00ae77;
+  text-align: center;
+  border:1px solid #00ae77;
+  border-radius: 10rpx;
+  margin-top: 20rpx;
+}
+.padding_top{
+  padding-top: 30rpx;
+  padding-bottom: 10rpx;
+}
+.buy_type{
+  height: 70rpx;
+}
+.account_padding{
+  height: 100%;
+}
+
+.account_padding image{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 26rpx;
+}
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.type_margin{
+  margin-top: 30rpx;
+}
+
+.select_bg{
+  background: #00ae77;
+  color: #fff;
+}
+.line_height{
+  line-height: 50rpx;
+}
+.account_footer{
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  border-radius: 10rpx;
+  text-align: center;
+  font-size: 34rpx;
+  padding:20rpx 0;
+}

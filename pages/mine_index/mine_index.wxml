@@ -1,0 +1,106 @@
+<view class='mine_box bg_home'>
+    <!-- 音频迷你播放 -->
+    <view id='mic_icon' wx:if="{{isMicPlay}}" bindtap='mic_iconTap'>
+      <image src='../../images/music/mic_icon.png'></image>  
+    </view>
+    
+    <view wx:if="{{token != '' && token != null }}" class='bg_fff border_bottom_gray com-padding_som' bindtap='go_revise'>
+        <view class='space-between com-width'>
+            <image wx:if="{{avatarUrl}}" class='img_box' src='{{avatarUrl}}'></image>
+            <image wx:else class='img_box' src='../../images/icon/noLogin.png'></image>
+           <!-- <image class='img_box' src='../../images/icon/noLogin.png'></image>  -->
+          <view class='com-margin'>{{user.nickName}}</view>
+        </view>
+    </view>
+
+    <view wx:else class='bg_fff border_bottom_gray com-padding_som' bindtap='go_revise'>
+        <view class='space-between com-width'>
+          <image class='img_box' src='../../images/icon/noLogin.png'></image>
+          <view class='com-margin'>匿名用户</view>
+        </view>
+    </view>
+
+    <!--毕业勋章  -->
+    <!-- <view class='bg_fff border_bottom_gray com-padding_som' bindtap='go_medal'>
+        <view class='space-between com-width'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/xzIcon.png'></image>
+              <view class='com-margin'>毕业勋章</view>
+          </view>
+          <image class='left_icon' src='../../images/icon/mine_left.png'></image>
+        </view>
+    </view> -->
+    
+    <!--我的账户  -->
+    <view wx:if="{{platform != 'ios' && platform != ''}}" class='bg_fff border_bottom_gray com-padding_som'>
+        <!-- 未登录时 -->
+        <view wx:if="{{token == '' && token == null}}" class='space-between com-width' bindtap='go_myAccount'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_ch.png'></image>
+              <view class='com-margin'>我的账户</view>
+          </view>
+          <view class='som_font color_gray display-flex'><view></view> <image class='left_icon' src='../../images/icon/mine_left.png'></image> </view>
+        </view>
+
+        <view wx:else class='space-between com-width' bindtap='go_myAccount'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_ch.png'></image>
+              <view class='com-margin'>我的账户</view>
+          </view>
+
+          <view class='som_font color_gray display-flex'>
+            <view><text wx:if="{{token != '' && token != null }}"> 余额:</text>{{user.androidAccountBalance}}</view> 
+            <image class='left_icon' src='../../images/icon/mine_left.png'></image> 
+          </view>
+        </view>
+    </view>
+
+    <!--已购课程  -->
+    <view class='bg_fff border_bottom_gray com-padding_som'>
+  
+        <view class='space-between com-width' bindtap='go_buyCourse'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_yg.png'></image>
+              <view class='com-margin'>已购课程</view>
+          </view>
+          <view class='som_font color_gray display-flex'>
+            <view>{{user.courseCount}}<text wx:if="{{token != '' && token != null }}">课</text></view>
+              <image class='left_icon' src='../../images/icon/mine_left.png'></image>
+            </view>
+        </view>
+    </view>
+
+    <!-- 分享 -->
+    <!-- <view class='com_margin bg_fff border_bottom_gray com-padding_som' bindtap='onShare'>
+        <view class='space-between com-width'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_dz.png'></image>
+              <view class='com-margin'></view>
+          </view>
+          <image class='left_icon' src='../../images/icon/mine_left.png'></image>
+        </view>
+    </view> -->
+    
+     <!-- 联系我们 -->
+    <view class='bg_fff border_bottom_gray com-padding_som' bindtap='phoneTap'>
+        <view class='space-between com-width'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_dh.png'></image>
+              <view class='com-margin'>联系我们</view>
+          </view>
+          <view class='som_font color_gray display-flex'><view>{{phone}}</view><image class='left_icon' src='../../images/icon/mine_left.png'></image> </view>
+        </view>
+    </view>
+     <!-- 设置 -->
+    <view class='bg_fff border_bottom_gray com-padding_som'>
+        <view class='space-between com-width' bindtap='go_setUp'>
+          <view class='space-between'>
+              <image class='mine_icon' src='../../images/icon/mine_sz.png'></image>
+              <view class='com-margin'>设置</view>
+          </view>
+          <image class='left_icon' src='../../images/icon/mine_left.png'></image>
+        </view>
+    </view>
+    <view class='Version'>Version 1.1.5</view>
+
+</view>

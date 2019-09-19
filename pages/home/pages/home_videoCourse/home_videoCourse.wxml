@@ -1,0 +1,40 @@
+<view class='videoCourse'>
+      <video style='width:100%;' src="../../{{videoUrl}}" show-play-btn="false" controls></video>
+      <!--title  -->
+      <view class='com-width border_bottom_gray videoCourse_title com-padding'>
+          <view>
+                <view class='med-font'>2.婚姻的成立及效力</view>
+                <view class='som_font color_gray'>有深度的内涵的金融</view>
+          </view>
+          <view class='som_font color_gray'>00:00/21:20</view>
+      </view>
+      
+      <!--课程列表  -->
+       <!-- <view class='com-width'>
+            <view class='med-font com-padding'>课程列表</view>
+
+            <view class='videoCourse_list display-flex'>
+                <image src='../../../../images/post/cat.png'></image>
+                <view>
+                    <view class='som_font list_title'>1.追溯营销变迁，回归大自然</view>
+                    <view class='som_font color_gray'>01:22:20</view>
+                </view>
+            </view>
+
+            <view class='videoCourse_list display-flex'>
+                <image src='../../../../images/post/cat.png'></image>
+                <view>
+                    <view class='som_font list_title'>1.追溯营销变迁，回归大自然</view>
+                    <view class='som_font color_gray'>01:22:20</view>
+                </view>
+            </view>
+
+            <view class='videoCourse_list display-flex'>
+                <image src='../../../../images/post/cat.png'></image>
+                <view>
+                    <view class='som_font list_title'>1.追溯营销变迁，回归大自然</view>
+                    <view class='som_font color_gray'>01:22:20</view>
+                </view>
+            </view>
+      </view>   -->
+</view>

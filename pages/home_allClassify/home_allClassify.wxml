@@ -1,0 +1,143 @@
+<view id='box'>
+    <view class='classify_head'>
+      <view class='border_bottom'>
+        <view class='com-width title_box'>
+          <view class='bgimg' bindtap='industryTap'>
+            
+            <text class='overflow {{label_isColor ? "color_green":""}}'>{{label}}</text>
+            <image class='tops' wx:if="{{industry_isShow}}" class='tops'src='../../images/icon/san_t.png'></image>
+            <image wx:else class='boms' src='../../images/icon/san.png'></image>
+          </view>
+          <view class='bgimg margin_left' bindtap='screenTap'>
+            <text class='overflow {{condition_isColor ? "color_green":""}}'>{{condition}}</text> 
+             <image class='tops' wx:if="{{screen_isShow}}" class='tops'src='../../images/icon/san_t.png'></image>
+            <image wx:else class='boms' src='../../images/icon/san.png'></image>
+          </view>
+          <view class='bgimg margin_left' bindtap='sortTap'>
+            <text class='color_green'>{{sortTitle}}</text>  
+             <image class='tops' wx:if="{{sort_isShow}}" class='tops'src='../../images/icon/san_t.png'></image>
+            <image wx:else class='boms' src='../../images/icon/san.png'></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='classify_content' wx:if="{{classify_content_isShow}}">
+      <!-- 行业 -->
+      <view class='label_blcok' wx:if="{{industry_isShow}}">
+            <view class='com-width {{industry_isShow ? "lable_atl_down" : "lable_atl_up" }} '>
+                <view class='class_title'>请选择行业</view>
+                <view class='class_label' >
+                
+                    <text class="label_text {{item.isTap ? 'bg_green':'bg_f2'}}" wx:for="{{init_data}}" wx:key="" wx:for-index="index" wx:for-item="item" data-type="{{item.type}}" data-id="{{item.id}}" bindtap='profession_blcok_tap'>{{item.title}}</text>
+
+                </view>
+            </view>
+            <!-- 底部 -->
+            <view class='border_top_gray bg_fff' wx:if="{{footer_isShow}}">
+                <view class='com-width footer'>
+                  <view class='resetting' bindtap='profession_resettingTap'>重置</view>
+                  <view class='finish bg_green' bindtap='profession_finishTap'>完成</view>
+                </view>
+            </view>
+      </view>
+      <!-- 筛选条件 -->
+      <view class='screen_box' wx:if="{{screen_isShow}}">
+          <view class='animation_box'>
+              <view class='com-width' >
+                  <view class='class_title'>请选择等级</view>
+                  <view class='class_label' >
+                      <text class="label_text {{item.isTap ? 'bg_green':'bg_f2'}}" bindtap='grade_blcok_tap'  wx:for="{{screen_data}}" wx:key="" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" data-type="{{item.type}}" wx:if="{{item.type==2}}">{{item.title}}</text>
+                  </view>
+              </view>
+
+              <view class='com-width' >
+                  <view class='class_title'>请选择标签</view>
+                  <view class='class_label' >
+                      <text class="label_text {{item.isTap ? 'bg_green':'bg_f2'}}" bindtap='grade_blcok_tap' wx:for="{{screen_data}}" wx:key="" wx:for-index="index" wx:for-item="item" data-id="{{item.id}}" data-type="{{item.type}}" wx:if="{{item.type==1}}">{{item.title}}</text>
+                  </view>
+              </view>
+          </view>
+          
+
+           <!-- 底部 -->
+          <view class='border_top_gray bg_fff' wx:if="{{footer_isShow}}">
+              <view class='com-width footer'>
+                <view class='resetting' bindtap='screen_resettingTap'>重置</view>
+                <view class='finish bg_green' bindtap='screen_finishTap'>完成</view>
+              </view>
+          </view>
+          
+      </view>
+      <!-- 推荐排序 -->
+      <view class='sort_box' wx:if="{{sort_isShow}}">
+            <radio-group class="radio-group" >
+
+                <label class="radio_box" data-val="0" bindtap='orderTpe'>
+                  <text>推荐排序</text> 
+                  <radio data-val="0"  checked="{{init_true}}"/>
+                </label>
+
+                <label class="radio_box" data-val="1" bindtap='orderTpe'>
+                  <text>最新上线</text> 
+                  <radio checked="{{new_true}}"/>
+                </label>
+
+                <label class="radio_box" data-val="2" bindtap='orderTpe'>
+                  <text>学习最多</text> 
+                  <radio  checked="{{more_true}}"/>
+                </label>
+
+            </radio-group>
+      </view>
+      <view class='bg_box' bindtap='blockTap'></view>
+
+    </view>
+</view>
+
+<view id='course' class='{{classify_content_isShow ? "course_height" : "" }}'>
+  <!--列表  -->
+        <view wx:for="{{course_list}}" wx:key="" wx:for-index="index" wx:for-item="itemSon">
+      
+            <!--专题课  -->
+            <view bindtap='com_tap' data-text="{{itemSon.linkText}}" 
+            data-type="{{itemSon.linkType}}">
+
+              <view class='com-width com_list'>
+                  <view class='phone'><image src='{{itemSon.picUrl}}'></image></view>
+
+                  <!-- 中间 -->
+                  <view class='msg'>
+                      <view class='msg_headr'>
+                        <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                        {{itemSon.cwTitle}} 
+                      </view>
+                      <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='color_green' wx:if="{{itemSon.label}}">
+                          <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+                      </view>
+                      <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+                  </view>
+
+                  <!-- 右边 -->
+                  <view wx:if="{{platform != 'ios' && platform != 'devtools'}}" class='com_list_rigth'>
+                        <view class='color_green'>
+                            <!-- <view class='isBuy color_cheng'>已订阅</view> -->
+                            <view>{{itemSon.price}}</view>
+                        </view>
+                        <view class='lh_view overflow color_gray'>{{itemSon.learnCount}}</view>
+                  </view>
+
+                   <view wx:else class='com_list_rigth'>
+                        <view class='color_green'>
+                            <view>查看详情</view>
+                        </view>
+                        <view class='lh_view overflow color_gray'>
+                          {{itemSon.learnCount}}
+                        </view>
+                  </view>
+              </view>
+              
+            </view>
+
+        </view>
+</view>

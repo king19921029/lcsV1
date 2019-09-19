@@ -1,0 +1,44 @@
+<view class='mine_setUp border_top_gray bg_gray'>
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>注册手机号</view>
+            <view>{{phone}}</view>
+        </view>
+    </view>
+
+    <!-- <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>更改手机号</view>
+            <image src='../../../../images/icon/left.png'></image>
+        </view>
+    </view> -->
+
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between' bindtap='go_revisePassword'>
+            <view>修改密码</view>
+            <image src='../../../../images/icon/left.png'></image>
+        </view>
+    </view>
+
+    <!-- <view class='border_bottom_gray marginTop'>
+        <view class='com-width com-padding_som space-between'>
+            <view>给软件打分</view>
+            <image src='../../../../images/icon/left.png'></image>
+        </view>
+    </view> -->
+
+    <view class='border_bottom_gray' bindtap='go_userProtocol'>
+        <view class='com-width com-padding_som space-between'>
+            <view>用户协议</view>
+            <image src='../../../../images/icon/left.png'></image>
+        </view>
+    </view>
+
+    <view class='border_bottom_gray' bindtap='go_mine'>
+        <view class='com-width com-padding_som space-between'>
+            <view>关于我们</view>
+            <image src='../../../../images/icon/left.png'></image>
+        </view>
+    </view>
+    <view bindtap='userQuit' class="setUp_footer color_green com-padding border_bottom_gray marginTop">退出登录</view>
+</view>

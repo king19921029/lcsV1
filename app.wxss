@@ -1,0 +1,399 @@
+#mic_icon image{
+  width: 80rpx;
+  height: 80rpx;
+  animation: headRotate 4s linear infinite;
+}
+#mic_icon{
+  position: fixed;
+  z-index: 1000;
+  right: 5%;
+  bottom: 5%;
+  width: 80rpx;
+  height: 80rpx;
+  border-radius:50%;
+  background: #fff;
+}
+.animation_img_isShow{
+  animation: headRotate 8s linear infinite;
+}
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(180deg);}
+  100% {transform: rotate(360deg);}
+}
+view{
+  margin: 0;
+  padding: 0;
+}
+.bg_green{
+  background:#00ae77;
+  color: #fff;
+}
+.bg_f2{
+  background: #f2f2f2;
+  color: #8a8a8a;
+}
+.color_red{
+  color: red;
+}
+.color_cheng{
+  color:#e56540;
+}
+.color_green{
+  color: #00ae77;
+}
+.color_gray{
+  color: #9e9e9e;
+} 
+
+.color_f{
+  color: #fff;
+}
+.phcolor{
+  color: #86d9bd;
+}
+.bg_green{
+  background:#00ae77;
+  color: #fff;
+}
+.bg_fff{
+  background: #fff;
+}
+.bg_red{
+  background: #ff5230;
+  color: #fff;
+}
+.bg_gray{
+  background: #f8f8f8;
+}
+.bg_grays{
+  background: gray;
+}
+.bg_home{
+  background: #fafafa;
+}
+.border_radius{
+  border-radius:50%;
+}
+.login_border{
+  border-bottom: 1px solid #86d9bd;
+}
+.border_bottom_gray{
+  border-bottom: 1px solid #F2F2F2;
+}
+.border_top_gray{
+  border-top: 1px solid #F2F2F2;
+}
+.display-flex{
+  display: flex;
+  align-items: center;
+}
+.space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.space-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.com-width{
+  width: 92%;
+  margin-left: 4%;
+}
+.com-som-margin-left{
+  margin-left: 25rpx;
+}
+.com-padding{
+  padding: 40rpx 0;
+}
+.com-padding_som{
+  padding: 30rpx 0; 
+}
+.com-margin{
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+.som_font{
+  font-size:26rpx;
+}
+.font_rs{
+  font-size: 26rpx;
+}
+.font_rb{
+  font-size: 28rpx;
+}
+.font_rs{
+  font-size: 22rpx;
+  
+}
+.font_sr{
+  font-size: 32rpx;
+}
+.font-weight{
+  font-weight: bold;
+}
+.som_som_font{
+  font-size:26rpx;
+}
+.medium_font{
+  font-size: 36rpx;
+  font-weight: bold;
+
+}
+.med-font{
+  font-size: 26rpx;
+}
+.big_font{
+  font-size: 58rpx;
+  font-weight: bold;
+  font-family:"苹方";
+}
+.overflow{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.overflow_wrap{
+ overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: wrap;
+}
+.display_none{
+  opacity: 0;
+}
+
+/* footer 播放器你浮窗*/
+.audio_left_view{
+  width: 12%;
+}
+.audio_center_view{
+  width: 68%;
+
+}
+.audio_right_view{
+  width: 20%;
+  margin-left: 3%;
+}
+
+/*首页学习计划模板css*/
+.study_img{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.study_headers{
+  font-weight: bold;
+  font-size: 30rpx;
+}
+.study_pic{
+  text-align: end;
+  width: 25%;
+}
+.study_pic view{
+  width: 100%;
+  height: 50%;
+}
+.study_msg{
+  width: 60%;
+  margin-left: 3%;
+}
+.study_bigImg{
+  margin-top: 42rpx;
+  margin-bottom: 42rpx;
+  height: 335rpx;
+}
+.study_people_num{
+  margin-top: 2rpx;
+}
+
+/*专题课css  */
+.com_list{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+  margin-top: 30rpx;
+  border-bottom: 1px solid #F2F2F2;
+}
+.templateType4{
+  height: 190rpx;
+}
+.phone{
+  width: 150rpx; 
+  height:200rpx;
+}
+.phone image{
+  width: 100%;
+  height: 100%;
+}
+.msg{
+  width:50%;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.msg .msg_headr{
+  font-weight: bold;
+}
+/* 必修 */
+.msg .extent{
+  background: #e56540;
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 20rpx;
+  padding: 0 6rpx;
+  font-weight: normal;
+  margin:0 0 6rpx 6rpx;
+}
+.msg .label{
+  font-size: 22rpx;
+  background: #f1f1f1;
+  border-radius: 20rpx;
+  padding: 0 14rpx;
+  margin-right: 6rpx;
+}
+
+.com_list_rigth{
+  height: 200rpx;
+  font-size: 24rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.com_list_rigth view{
+  text-align: end;
+  height: 50%;
+}
+.lh_view{
+  line-height:170rpx;
+}
+/*播放页  */
+.audio_display{
+  width: 5%;
+  height: 5%;
+  opacity: 0;
+  position: absolute;
+  bottom: 10%;
+  z-index: -100;
+}
+ .audio_box{
+  background: #fff;
+  position: absolute; 
+  z-index:999; 
+  width: 100%;
+  /* height: 100%; */
+}   
+.audio_box_header{
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  line-height: 120rpx;
+}
+.audio_box_header image{
+  width: 80rpx;
+  height: 80rpx;
+  margin-top: 20rpx;
+}
+.audio_box_content{
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.audio_box_content view{
+  width: 50%;
+  text-align: center;
+}
+.audio_box_title{
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  margin: 60rpx 0 10rpx 0;
+}
+.bar{
+  height:10%;
+  /* background: gray; */
+  /* margin-top:5%; */
+ 
+}
+
+.time_width{
+  width: 90%;
+  margin-left: 5%;
+}
+
+.bar_width{
+  width: 80%;
+  margin-left: 10%;
+}
+.som_img{
+  width: 40rpx;
+  height: 40rpx;
+}
+.audio_box_play{
+  width: 150rpx;
+  margin:0 30rpx 0 30rpx;
+  height: 150rpx;
+}
+.btn_box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.audio_box_footer{
+  width: 90%;
+  margin-left: 5%;
+  position: fixed;
+  bottom: 5%;
+
+}
+.audio_box_footer image{
+  width: 70rpx;
+  height: 70rpx;
+}
+#video_bj{
+  height: 90rpx;
+  width: 180rpx;
+  /* margin-left: 16rpx; */
+}
+
+/* 底部播放器 */
+.com_audio{
+  height: 110rpx;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 80rpx;
+  border-radius: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+}
+
+.audio_img{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 10rpx;
+}
+.less{
+  width: 34rpx;
+  height: 20rpx;
+}
+.audio_play{
+  width: 66rpx;
+  height: 66rpx;
+}
+.close{
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 20rpx;
+}
+
+/*详情接口 图文*/
+.WxEmojiView{
+
+}

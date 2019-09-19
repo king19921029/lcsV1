@@ -1,0 +1,194 @@
+#box{
+  position: fixed;
+  z-index: 100;
+  top:0;
+  left: 0;
+  right: 0;
+}
+
+.classify_head{
+  position: fixed;
+  z-index: 100;
+  top:0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border-top: 1px solid #f2f2f2;
+  position: relative;
+}
+.classify_content{
+  height:88vh;
+}
+.bg_box{
+ background: rgba(000,000,000,0.3);
+ height: 80vh;
+}
+.border_bottom{
+  border-bottom: 1px solid #f3f3f3;
+}
+.title_box{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 0;
+  margin-left: 6%;
+}
+.title_box>view{
+  padding: 20rpx 0;
+  font-size: 26rpx;
+  width: 32%;
+  text-align: center;
+  color: #999999;
+}
+.bgimg{
+  display: flex;
+  align-items: center;
+}
+.bgimg text{
+  width: 70%;
+}
+.bgimg .boms{
+  width:22rpx;
+  height:18rpx;
+}
+.tops{
+  width:34rpx;
+  height:30rpx;
+}
+.margin_left{
+  margin-left: 40rpx;
+}
+.margin_left text{
+  width: 80%;
+}
+.label_blcok,.screen_box{
+  padding-bottom:20rpx;
+  background: #fff;
+}
+.lable_atl_down{
+  padding-bottom:20rpx;
+  animation: YHdown 0.3s;
+}
+.lable_atl_up{
+  padding-bottom:20rpx;
+  animation: YHup 0.3s;
+}
+.animation_box{
+  animation: SXdown 0.3s;
+}
+.class_title{
+  font-size: 28rpx;
+  padding: 40rpx 0 20rpx 0;
+}
+.class_label{
+  display: flex;
+  font-size:26rpx; 
+  flex-wrap: wrap;  
+  padding-bottom: 20rpx;
+}
+.label_text{
+  text-align: center;
+  display: block;
+  width: 22%;
+  padding: 10rpx 0;
+  border-radius: 100rpx;
+  /* margin-right: 40rpx; */
+  margin: 30rpx 0 0 20rpx;
+}
+.bg_green{
+  background:#00ae77;
+  color: #fff;
+}
+.bg_f2{
+  background: #f2f2f2;
+  color: #8a8a8a;
+}
+.footer{
+  display: flex;
+  padding: 20rpx 0;
+  font-size: 26rpx;
+}
+.resetting{
+  width: 30%;
+  background: #eeeeee;
+  border-radius: 10rpx;
+  padding: 16rpx 0;
+  color: #999999;
+  text-align: center;
+  margin-right:4%;
+}
+.finish{
+  border-radius: 10rpx;
+  padding: 16rpx 0;
+  text-align: center;
+  width: 66%;
+}
+
+/* 推荐排序 */
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+.radio_box{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #f2f2f2;
+  padding: 30rpx 0;
+}
+.radio_box text{
+  margin-left: 40rpx;
+  font-size: 28rpx;
+}
+.radio_box radio {
+  transform:scale(0.9);
+  margin-right: 30rpx;
+}
+/* 课程列表 */
+#course{
+  margin-top:150rpx;
+}
+.course_height{
+  height: 85vh;
+  overflow:hidden;
+}
+
+/* 动画 */
+/* 银行下来 */
+@keyframes YHdown{
+    from {
+      height: 0;
+    }
+    to {
+      height: 200rpx;
+    }
+}
+@keyframes SXdown{
+    from {
+      height: 0;
+    }
+    to {
+      height: 580rpx;
+    }
+}
+
+/* 上去 */
+@keyframes YHup{
+    from {
+        height: 200rpx;
+    }
+    to {
+        height: 0;
+    }
+}
+@keyframes SXup{
+    from {
+        height: 580rpx;
+    }
+    to {
+        height: 0;
+    }
+}
+
+.open{
+  animation: slidedown 1s;
+}

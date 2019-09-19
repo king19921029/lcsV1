@@ -1,0 +1,33 @@
+
+
+.img_box{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 50%;
+}
+.com_margin{
+  margin-top: 30rpx;
+}
+.mine_icon{
+  height: 50rpx;
+  width: 50rpx;
+}
+.left_icon{
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 10rpx;
+}
+.com-margin{
+  margin-left: 30rpx;
+  font-weight: bold;
+  font-size: 28rpx;
+}
+.Version{
+  background: #fff;
+  position: fixed;
+  bottom:3%;
+  width: 100%;
+  font-size: 26rpx;
+  text-align: center;
+  color: gray;
+}

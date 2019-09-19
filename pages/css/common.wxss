@@ -1,0 +1,142 @@
+
+.color_green{
+  color: #00ae77;
+}
+.color_gray{
+  color: #9e9e9e;
+} 
+.color_f{
+  color: #fff;
+}
+
+.bg_green{
+  background:#00ae77;
+  color: #fff;
+}
+.bg_fff{
+  background: #fff;
+}
+.bg_red{
+  background: #ff5230;
+  color: #fff;
+}
+.bg_gray{
+  background: #f8f8f8;
+}
+.bg_home{
+  background: #fafafa;
+}
+.border_bottom_gray{
+  border-bottom: 1px solid #F2F2F2;
+}
+.border_top_gray{
+  border-top: 1px solid #F2F2F2;
+}
+.display-flex{
+  display: flex;
+  align-items: center;
+}
+.space-between{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.space-around{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.com-width{
+  width: 92%;
+  margin-left: 4%;
+}
+
+.com-padding{
+  padding: 40rpx 0;
+}
+.com-padding_som{
+  padding: 30rpx 0; 
+}
+.com-margin{
+  margin-left: 20rpx;
+  font-weight: bold;
+  font-size: 32rpx;
+}
+.som_font{
+  font-size:30rpx;
+}
+.font-weight{
+  font-weight: bold;
+}
+.som_som_font{
+  font-size:28rpx;
+}
+.medium_font{
+  font-size: 42rpx;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.med-font{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.big_font{
+  font-size: 50rpx;
+  font-weight: bold;
+  font-family:"苹方";
+}
+
+/*专题课css  */
+.com_list{
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 40rpx;
+}
+.phone{
+  width: 18%; 
+  height:220rpx;
+  
+}
+.phone image{
+  width: 100%;
+  height: 100%;
+  
+}
+.msg{
+  width:50%;
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.msg .msg_headr{
+  font-weight: bold;
+  font-size: 36rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.msg_font{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+.msg_people{
+  margin-top: 40rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.com_list_rigth{
+  font-size: 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.com_list_rigth view{
+  height: 50%;
+  text-align: end;
+}
+.lh_view{
+  line-height: 177rpx;
+  font-size: 28rpx;
+}

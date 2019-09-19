@@ -1,0 +1,3 @@
+<view class='box'>
+  <web-view src="https://api.licaishi365.com/app_page/staticHtml/newInsuranceCourseWeb/html/index.html?inviterPhone=18801287297"></web-view>
+</view>

@@ -1,0 +1,11 @@
+<view id='box'>
+    <view class="com-width" wx:for="{{allData}}" wx:key="" wx:for-index="index" wx:for-item="item">
+        <view class='class_title'>{{item.title}}</view>
+        <view class='class_label'>
+            <text class="label_text {{items.isTap ? 'bg_green':'bg_f2'}}" wx:for="{{item.labelList}}" wx:key="" wx:for-index="index" wx:for-item="items" data-id="{{items.id}}"  bindtap='labeTap'>{{items.title}}</text>
+        </view>
+    </view>
+    <view class='com-width footer'>
+        <button disabled="{{disabled}}" bindtap='nextTap' class='bg_green'>下一步</button>
+    </view>
+</view>

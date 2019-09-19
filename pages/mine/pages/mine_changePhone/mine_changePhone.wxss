@@ -1,0 +1,32 @@
+.mine_changePhone,.new_phone,.phone_code{
+  background: #02af7a;
+  height: 99vh;
+  color: #fff;
+}
+.password_box{
+  padding: 20rpx 0;
+}
+.password_box input{
+  width: 60%;
+}
+.next{
+  text-align: center;
+}
+.changePhone_font{
+  font-size: 46rpx;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+/*新手机号  */
+.new_phone input{
+  width: 80%;
+}
+
+/*验证码 */
+.code_margin{
+  margin-top: 20rpx;
+}
+.phone_code{
+  border-top: 1px solid #02af7a;
+}

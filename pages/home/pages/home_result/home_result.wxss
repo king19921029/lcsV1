@@ -1,0 +1,106 @@
+
+
+.result_box{
+  position: relative;
+  padding-bottom: 145rpx;
+}
+.res{
+ border-top: 1px solid #F2F2F2;
+ border-bottom: 1px solid #F2F2F2;
+}
+.res text{
+  display: block;
+}
+.str_text{
+  margin-left: 20rpx;
+}
+.num_view{
+  margin-right: 20rpx;
+  display: flex;
+}
+
+.answer_options{
+  display: flex;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.icon_block{
+  width: 13%;
+  margin-left: 6%;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+}
+.yes_img{
+  width: 36rpx;
+  height: 26rpx;
+}
+.no_img{
+  width: 30rpx;
+  height: 30rpx;
+}
+.content{
+  width: 75%;
+}
+/*题目*/
+.answer_title{
+  /* height: 130rpx; */
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.options,.answer_title{
+ border-bottom: 1px solid #e8e8e8;
+}
+/* 选择题 */
+.options{
+  padding: 0 0 25rpx 0;
+  font-size: 28rpx;
+}
+.options view{
+  /* padding: 10rpx 0; */
+  display: flex;
+  align-items: center;
+}
+/*正确答案*/
+.correct{
+  padding: 30rpx 0;
+}
+.yes{
+  padding-bottom: 15rpx;
+}
+.analysis{
+  font-size: 28rpx; 
+  line-height: 55rpx;
+}
+
+/* footer */
+.res_footer{
+  height: 140rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+.footer{
+  height: 100%;
+}
+ .footer view{
+  height: 70%;
+  font-size: 28rpx;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} 
+.left_view{
+  width: 33%;
+}
+.right_view{
+  width: 63%;
+}
+.d_right_view{
+  width: 63%;
+  background: #dcdcdc;
+}
+

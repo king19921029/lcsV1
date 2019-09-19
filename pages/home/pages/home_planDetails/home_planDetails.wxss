@@ -1,0 +1,4 @@
+@import "../../../css/com_details.wxss";
+#mic_icon{
+  bottom: 15%;
+}

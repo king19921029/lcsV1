@@ -1,0 +1,50 @@
+<view class='allPlan_box'>
+      <!--循环列表  -->
+      <view class='com-width com_list border_bottom_gray' wx:for="{{indexSubjectSkuList}}" wx:key="" wx:for-index="index" wx:for-item="item" data-text="{{item.linkText}}" data-type="{{item.linkType}}" bindtap='to_details'>
+
+          <view class='phone'><image src='{{item.picUrl}}'></image></view>
+
+  
+          <!-- 中间 -->
+          <view class='msg'>
+              <view class='msg_headr'>
+                <text class='extent' wx:if="{{item.extent}}">{{item.extent}}</text>
+                {{item.cwTitle}} 
+              </view>
+              <view class='msg_content overflow color_gray'>{{item.cwInfo}}</view>
+              <view class='color_green' wx:if="{{item.label}}">
+                  <text class='label' wx:for="{{item.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+              </view>
+              <view class='msg_people overflow {{item.label? "":"is_line"}}'>{{item.tName}} {{item.tTitle}}</view>
+          </view>
+
+          <!-- 右边 -->
+          <view wx:if="{{platform != 'ios' && platform != 'devtools'}}" class='com_list_rigth'>
+                <view class=''>
+                    <view wx:if="{{item.isBuy == 1}}" class='color_cheng'>
+                      {{item.price}}
+                    </view>
+                    <view wx:else class='color_green'>{{item.price}}</view>
+                    <view wx:if="{{item.isBuy == 1}}" 
+                      class='isBuy color_gray'>
+                      {{item.oldPrice}}
+                    </view>
+                    
+                </view>
+                <view class='lh_view overflow color_gray'>
+                  {{item.learnCount}}
+                </view>
+          </view>
+
+          <view wx:else class='com_list_rigth'>
+              <view>
+                <view class='color_green'>查看详情</view>
+              </view>
+              <view class='lh_view overflow color_gray'>
+                {{item.learnCount}}
+              </view>
+          </view>
+
+  
+      </view> 
+</view>

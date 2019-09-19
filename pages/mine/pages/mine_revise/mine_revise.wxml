@@ -1,0 +1,76 @@
+<view class='revise_box border_top_gray bg_gray'>
+    <!-- <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between' bindtap='setInfo'>
+            <view>头像</view>
+            <image src='{{HeaderUrl}}'></image>
+        </view>
+    </view> -->
+
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>名称</view>
+            <view class=''><input bindinput='userName' value='{{Name}}'></input></view>
+        </view>
+    </view>
+
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>性别</view>
+            <picker range="{{sex}}" value="{{Sex}}" bindchange="bindPickerChange">
+              <view>
+                    {{sex[Sex]}}
+              </view>
+            </picker>
+        </view>
+    </view>
+    <!-- 出生日期 -->
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>出生日期</view>
+            <picker mode="date" start="1000-1-1" end="2018-4-1" value="{{Birthdate}}" bindchange="bindDateChange">
+                <view>{{Birthdate}}</view>
+            </picker>
+        </view>
+    </view>
+    <!--所在城市  -->
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>所在城市</view>
+            <picker range="{{province}}"  bindchange="bindRegionChange" value="{{provinceIdx}}">
+              <view wx:if="{{CityId == '' }}">请选择</view>
+              <view wx:else class="picker">{{CityId}}</view> 
+            </picker>
+        </view>
+    </view>
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between marginTop'>
+            <view>职业类型</view>
+            <picker range="{{occupation}}" value="{{occupationIdx}}" bindchange="bindWorkType">
+                 <view wx:if="{{JobType == '' }}">请选择</view>
+                 <view wx:else>{{JobType}}</view> 
+            </picker>
+        </view>
+    </view>
+
+    <!-- <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>职业名称</view>
+            <input bindinput='bindWorkName' value="{{JobName}}" placeholder='请输入职业名称'></input>
+        </view>
+    </view> -->
+
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>工作年限</view>
+            <input bindinput='bindWorkTime' value="{{WorkYear}}" placeholder='请输入工作年限'></input>
+        </view>
+    </view>
+
+    <view class='border_bottom_gray'>
+        <view class='com-width com-padding_som space-between'>
+            <view>工作单位</view>
+            <input bindinput='bindWorkUnit' value="{{WorkUnit}}" placeholder='请输入工作单位'></input>
+        </view>
+    </view>
+    
+</view>

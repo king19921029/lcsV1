@@ -1,0 +1,48 @@
+#box{
+  height: 100vh;
+  width: 100%;
+}
+.header{
+  font-size: 40rpx;
+  padding: 30rpx 0;
+}
+.phone{
+  border-bottom: 1px solid #6cc29d;
+  width: 100%;
+  padding: 0;
+  height: 100rpx;
+  color: #fff;
+  font-size: 34rpx;
+}
+.code_box{
+  border-bottom: 1px solid #6cc29d;
+  padding: 0;
+  height: 100rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 34rpx;
+}
+.phcolor{
+  color: #6cc29d;
+}
+button::after{
+  border:none;
+}
+button{
+  padding:0 10rpx;
+  font-size: 30rpx;
+  margin-right:20rpx;
+}
+.footer{
+  margin-top:100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer view{
+  border:1px solid #fff;
+  padding: 20rpx 200rpx;
+  border-radius: 50rpx;
+}

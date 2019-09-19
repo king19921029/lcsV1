@@ -1,0 +1,10 @@
+
+.play_img{
+  width: 70rpx;
+  height: 70rpx;
+}
+.see_img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}

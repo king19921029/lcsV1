@@ -1,0 +1,35 @@
+ <template name="music_block">
+    <view animation="{{audio_animation}}" class='audio_box'>
+            <view class='audio_box_header com-width' bindtap='sselTap'>
+                <image src='../../images/icon/bottom.png'></image>
+            </view> 
+            <image class='com-width' style='height:350rpx;' src='../../images/post/bl.png'></image>
+
+            <view class='audio_box_content'>
+                <view class='audio_box_title'>1.如何理解风险投资</view>
+                <view class='som_font color_gray'>风险投资啊啊啊</view> 
+            </view>
+              
+            <view class='bar'>
+               
+                <slider class='bar_width' block-size="12" bindchange="bindchange" min="0" max="{{barWidth}}" value = "{{sliderValue}}" />
+                <view class='bar_width space-between som_font color_gray'>
+                    <view>{{playTime}}</view>
+                    <view>{{allTime}}</view>
+                </view>
+            </view>
+              <view class='btn_box'>
+                    <image class='som_img' src='../../images/icon/ago.png'></image>
+                     <image class="audio_box_play" wx-if="{{isPlay}}" bindtap='playTap' src='../../images/music/greenStart.png'></image>
+                     
+                    <image class="audio_box_play" bindtap='playTap' src='../../images/music/greenStart.png'></image>
+                    <image class="audio_box_play" wx-if="{{isStop}}" bindtap='pauseTap' src='../../images/music/music-stop.png'></image>
+                    <image class='som_img' src='../../images/icon/after.png'></image>
+              </view>
+              <view class='audio_box_footer space-between'>
+                    <image src='../../images/icon/tab.png' bindtap='goPlayList'></image>
+                    <image id='video_bj' src='../../images/post/cat.png' bindtap='goVideoCourse'></image> 
+                    <image src='../../images/icon/text.png'></image>
+              </view>
+          </view>
+</template> 

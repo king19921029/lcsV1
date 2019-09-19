@@ -1,0 +1,19 @@
+
+    <view class='home_allColumn'>
+      <!--循环列表  -->
+      <view class='com-width'>
+        <navigator url="../home_planDetails/home_planDetails" class='com_list com-padding border_bottom_gray'>
+            <view class='phone'><image src='../../../../img/touxiang.jpg'></image></view>
+            <view class='msg'>
+                <view class='msg_headr'>为什么要做理财师</view>
+                <view class='msg_font color_gray'>带您清晰了理解理财师服务理念如何，服务客户</view>
+                <view class='msg_people'>范长江  宏观经济学家</view>
+            </view>
+            <view class='com_list_rigth'>
+                  <view class='color_green'>已订阅</view>
+                  <view class='lh_view color_gray'>28662人订阅</view>
+            </view>
+        </navigator>
+      </view> 
+</view>
+

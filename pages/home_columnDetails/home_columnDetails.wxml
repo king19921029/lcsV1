@@ -1,0 +1,76 @@
+<view class='box'>
+  <view class='banner com-width border_bottom_gray' bindtap='banner'>
+    <image src='{{details.list_pic_url}}'></image>
+  </view>
+  <!-- 列表 -->
+  <view class='box_list'>
+     <view bindtap='to_details' wx:for="{{skuList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon" data-text="{{itemSon.linkText}}" 
+    data-type="{{itemSon.linkType}}">
+
+              <view class='com-width com_list'>
+                  <view class='phone'><image src='{{itemSon.picUrl}}'></image></view>
+
+                  <!-- 中间 -->
+                  <view class='msg'>
+                      <view class='msg_headr'>
+                        <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                        {{itemSon.cwTitle}} 
+                      </view>
+                      <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='color_green' wx:if="{{itemSon.label}}">
+                          <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+                      </view>
+                      <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+                  </view>
+
+                  <!-- 右边 -->
+                  <view wx:if="{{platform != 'ios' && platform != 'devtools'}}" class='com_list_rigth'>
+                        <view class=''>
+                            <view wx:if="{{itemSon.isBuy == 1}}" class='color_cheng'>
+                              {{itemSon.price}}
+                            </view>
+                            <view wx:else class='color_green'>{{itemSon.price}}</view>
+                            <view wx:if="{{itemSon.isBuy == 1}}" 
+                              class='isBuy color_gray'>
+                              {{itemSon.oldPrice}}
+                            </view>
+                           
+                        </view>
+                        <view class='lh_view overflow color_gray'>
+                          {{itemSon.learnCount}}
+                        </view>
+                  </view>
+                  
+                  <view wx:else class='com_list_rigth'>
+                        <view>
+                          <view class='color_green'>查看详情</view>
+                        </view>
+                        <view class='lh_view overflow color_gray'>
+                          {{itemSon.learnCount}}
+                        </view>
+                  </view>
+
+              </view>
+              
+    </view>
+  </view>
+
+  <view wx:if="{{platform != 'ios' && platform != 'devtools'}}" class='footer border_top_gray'>
+      <view wx:if="{{details.is_buy == 0}}" bindtap='buy'  class='com-width footer_pic'>
+        {{details.priceStr}}
+      </view>
+      <view wx:else class='com-width footer_pic'>
+        已购买
+      </view>
+  </view>
+
+  <view class='footer border_top_gray'>
+      <view wx:if="{{details.is_buy == 0}}" bindtap='iosBuy'  class='com-width footer_pic'>
+       查看详情
+      </view>
+      <view wx:else class='com-width footer_pic'>
+        已购买
+      </view>
+  </view>
+
+</view>

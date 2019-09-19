@@ -1,0 +1,168 @@
+.templates{
+  width: 100%;
+  height: 100rpx;
+}
+ Page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow-y: hidden; 
+} 
+.study_box{
+  height: 100vh;
+  background: #ffffff;
+}
+.header>view{
+  height: 50%;
+}
+.list-box view{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  padding: 40rpx 0; 
+}
+.border-bottom{
+  color: #27936f;
+  border-bottom: 8rpx solid #27936f;
+}
+.isNone{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top:30rpx;
+}
+.today_img{
+  height: 452rpx;
+  width: 305rpx;
+  margin-top: 60rpx;
+}
+.isNone_header{
+  margin-top: 76rpx;
+}
+.isNone_font{
+  width: 90%;
+  font-size: 30rpx;
+  margin-top: 5rpx;
+}
+.isNone_btn{
+  padding: 20rpx 180rpx;
+  border-radius: 13rpx;
+  font-size: 30rpx;
+  margin-top: 54rpx;
+}
+/*今日学习有课程时*/
+.study_content{
+  width: 100%;
+  margin-left: 0%;
+}
+.content_title{
+  text-indent: 44rpx;
+}
+.round{
+  display: block;
+  background:#00ae77;
+  width: 26rpx;
+  height: 26rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: -13rpx;
+  top: 38rpx;
+}
+.my_study image{
+  height: 70rpx;
+  width: 70rpx;
+  margin-right: 20rpx;
+}
+
+.study_content_right{
+  margin-right: 32rpx;
+}
+
+/*课程*/
+.course_header{
+  font-size: 28rpx;
+}
+.course_last_view{
+  border-left: 1px solid #c7c7c7;
+  padding-left:20rpx; 
+}
+.course_last_view icon{
+  margin-right: 10rpx;
+}
+.cx_img{
+  width: 32rpx;
+  height: 34rpx;
+  margin-right: 22rpx;
+}
+
+
+/*弹窗*/
+.pop{
+  height: 100vh;
+  background-color:rgba(000,0,0,0.3);
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.radio_footer{
+  padding-bottom: 10rpx;
+}
+.pop .font_rb{
+  font-weight: bold;
+}
+.pop_footer{
+  position: fixed;
+  left:0;
+  bottom: 0;
+  right: 0;
+}
+.left_name{
+  width: 46%;
+  height: 330rpx;
+  margin-left:4%; 
+}
+.com_style{
+  width: 100%;
+  height:110rpx;
+  line-height: 110rpx;
+}
+.radio-group{
+  width: 46%;
+  height: 330rpx;
+  margin-right:4%; 
+}
+.radio_son{
+  text-align: end;
+}
+
+/*成长*/
+.grow_header{
+  padding: 40rpx 0;
+}
+.echars_img{
+  width: 100%;
+  height: 520rpx;
+  border-bottom: 1px solid #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border-bottom-fa{
+  border-bottom:30rpx solid #fafafa;
+}
+.grow{
+  font-size: 30rpx;
+}
+.phone{
+  margin:0;
+}
+.over_msg{
+  width: 68%;
+}
+/* .com_list_rigth{
+  width: 160rpx;
+} */
+

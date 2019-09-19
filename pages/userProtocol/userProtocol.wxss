@@ -1,0 +1,20 @@
+#box{
+  width: 92%;
+  margin-left: 4%;
+  padding-bottom: 30rpx;
+}
+.headers{
+  text-align: center;
+  padding: 30rpx 0;
+  
+}
+text{
+  display: block;
+  padding: 30rpx 0;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+view{
+  font-size: 30rpx;
+  padding: 10rpx 0;
+}

@@ -1,0 +1,17 @@
+<!-- 播放组件的使用 -->
+<vhall
+  bind:playSource="getPlaySource"
+  bind:fullScreenChange="screenChange"
+  bind:playWaiting="waiting"
+  bind:playTimeUpdate="playUpdate"
+  bind:errorMsg="errorFn"
+  bind:playStatus="playStatus"
+  bind:onMessage="onGetMessage">
+   <view slot="before"> 此处slot会插入视频播放区域上边 </view>
+   <view slot="after"> 此处slot会插入视频播放区域下边 </view>
+</vhall>
+
+<!-- 文档组件的使用（可选，此组件依赖vhall组件） -->
+<vhallDoc 
+  bind:docStatus="changeDocStatus" 
+  docWidth='{{docWidth}}'/>

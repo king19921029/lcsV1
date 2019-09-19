@@ -1,0 +1,7 @@
+
+.phone{
+  margin:0;
+}
+.msg{
+  width: 57%;
+}

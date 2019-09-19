@@ -1,0 +1,21 @@
+.register{
+  height: 100vh;
+  font-size: 34rpx;
+}
+.register input{
+  width:300rpx;
+  margin-left: 40rpx;
+}
+.code{
+   padding: 10rpx 20rpx; 
+   font-size: 30rpx;
+   color:#00ae77;
+   border:1px solid #00ae77;
+   border-radius: 30rpx;
+}
+.confirm{
+  text-align: center;
+  border-radius: 30rpx;
+  padding: 25rpx 0;
+  margin-top: 40rpx;
+}

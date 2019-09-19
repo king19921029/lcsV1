@@ -1,0 +1,47 @@
+<view class='history_box'>
+    <view class='study_content'>
+            <view class='content_title display-flex som_font com-padding_som border_bottom_gray'>
+                <view class='color_green'><text class='round'></text>2月12日 学习记录</view>
+            </view>
+            <!--课程列表  -->
+            <view class='border_bottom_gray'>
+                  <view class='com-width my_study space-between'>
+                        <view class='com-padding_som'>
+                              <view class='font_rb my_study_title'>1.夫妻财富制度（上）</view>
+                              <view class='som_som_font color_gray'>已学完/学习计划/婚姻法的十节必修课</view>
+                        </view> 
+                        <image src='../../../../images/icon/left.png'></image>
+                  </view>
+            </view>
+            <view class='border_bottom_gray'>
+                  <view class='com-width my_study space-between'>
+                        <view class='com-padding_som'>
+                              <view class='font_rb my_study_title'>1.夫妻财富制度（上）</view>
+                              <view class='som_som_font color_gray'>已学完/学习计划/婚姻法的十节必修课</view>
+                        </view> 
+                        <image src='../../../../images/icon/left.png'></image>
+                  </view>
+            </view>
+            <view class='content_title space-between som_font com-padding_som border_bottom_gray'>
+                <view class='color_green'><text class='round'></text>2月11日 学习记录</view>
+            </view>
+            <view class='border_bottom_gray'>
+                  <view class='com-width my_study space-between'>
+                        <view class='com-padding_som'>
+                              <view class='font_rb my_study_title'>1.夫妻财富制度（上）</view>
+                              <view class='som_som_font color_gray'>已学完/学习计划/婚姻法的十节必修课</view>
+                        </view> 
+                        <image src='../../../../images/icon/left.png'></image>
+                  </view>
+            </view>
+            <view class='border_bottom_gray'>
+                  <view class='com-width my_study space-between'>
+                        <view class='com-padding_som'>
+                              <view class='font_rb my_study_title'>1.夫妻财富制度（上）</view>
+                              <view class='som_som_font color_gray'>已学完/学习计划/婚姻法的十节必修课</view>
+                        </view> 
+                        <image src='../../../../images/icon/left.png'></image>
+                  </view>
+            </view>
+    </view>
+</view>

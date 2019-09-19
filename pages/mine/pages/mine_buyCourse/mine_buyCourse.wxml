@@ -1,0 +1,44 @@
+<view class='buyCourse_box border_top_gray'>
+      <!--header  -->
+      <view class='course_header com-padding border_bottom_gray color_gray med-font'>
+          <view class='com-width space-between'>
+          <view class="{{course_index == 3 ? 'color_green' : ''}}" bindtap='initCourse'>全部课程</view>
+              <view class="{{course_index == index ? 'color_green' : ''}}" wx:for="{{header_items}}" wx:key="" wx:for-index="index" wx:for-item="item" data-index="{{index}}" bindtap='course_tab_switch'>
+              {{item.title}}
+            </view>
+          </view>
+  
+      </view>
+      <!--列表  -->
+
+      <view wx:for="{{getUserSkuList}}" wx:key="" wx:for-index="index" wx:for-item="itemSon" data-type="{{itemSon.linkType}}" data-text="{{itemSon.linkText}}"  class='com-width com_list' bindtap='com_tap'>
+      
+          <view class='phone'><image src='{{itemSon.picUrl}}'></image></view>
+
+          <!-- 中间 -->
+          <view class='msg'>
+              <view class='msg_headr'>
+                <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                {{itemSon.cwTitle}} 
+              </view>
+              <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+              <view class='color_green' wx:if="{{itemSon.label}}">
+                  <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+              </view>
+              <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+          </view>
+
+
+
+          <view class='com_list_rigth'>
+                <view wx-if="{{itemSon.linkType == 0 }}" class='color_green'>学习计划</view>
+                <view wx-if="{{itemSon.linkType == 1 }}" class='color_green'>专题课</view>
+                <view wx-if="{{itemSon.linkType == 2  }}" class='color_green'>订阅专刊</view>
+                <view class='lh_view color_gray'></view>
+          </view>
+      </view> 
+
+
+      
+      
+</view>

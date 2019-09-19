@@ -1,0 +1,108 @@
+{
+  "pages": [
+    "pages/home_index/home_index",
+    "pages/aaaaa/aaaaa",
+    "pages/bindPhone/bindPhone",
+    "pages/home_columnDetails/home_columnDetails",
+    "pages/home_columnBuy/home_columnBuy",
+    "pages/home_manuscript/home_manuscript",
+    "pages/home_allClassify/home_allClassify",
+    "pages/home_classify/home_classify",
+    "pages/study_index/study_index",
+    "pages/mine_index/mine_index",
+    "pages/passwordLogin/passwordLogin",
+    "pages/revisePassword/revisePassword",
+    "pages/forgetPassword/forgetPassword",
+    "pages/register/register",
+    "pages/login/login",
+    "pages/protocol/protocol",
+    "pages/newPassword/newPassword",
+    "pages/playList/playList",
+    "pages/index/index",
+    "pages/revisePhone/revisePhone",
+    "pages/userProtocol/userProtocol",
+    "pages/aboutMine/aboutMine",
+    "pages/webView/webView"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "subPackages": [
+    {
+      "root": "pages/home/",
+      "pages": [
+        "pages/home_planDetails/home_planDetails",
+        "pages/home_medal/home_medal",
+        "pages/home_buy/home_buy",
+        "pages/hoem_exam/hoem_exam",
+        "pages/home_specialDetails/home_specialDetails",
+        "pages/home_allSpecial/home_allSpecial",
+        "pages/home_result/home_result",
+        "pages/home_audition/home_audition",
+        "pages/home_teacherDetails/home_teacherDetails",
+        "pages/home_allColumn/home_allColumn",
+        "pages/home_allPlan/home_allPlan",
+        "pages/home_videoCourse/home_videoCourse",
+        "pages/home_classify/home_classify"
+      ]
+    },
+    {
+      "root": "pages/study/",
+      "pages": [
+        "pages/study_history/study_history"
+      ]
+    },
+    {
+      "root": "pages/mine/",
+      "pages": [
+        "pages/mine_buyCourse/mine_buyCourse",
+        "pages/mine_setUp/mine_setUp",
+        "pages/mine_revise/mine_revise",
+        "pages/mine_changePhone/mine_changePhone",
+        "pages/mine_myAccount/mine_myAccount"
+      ]
+    },
+    {
+      "root": "pages/user/",
+      "pages": [
+        "pages/forgetPassword/forgetPassword",
+        "pages/register/register",
+        "pages/login/login",
+        "pages/revisePhone/revisePhone",
+        "pages/revisePassword/revisePassword"
+      ]
+    }
+  ],
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "color": "#666666",
+    "selectedColor": "#666666",
+    "list": [
+      {
+        "pagePath": "pages/home_index/home_index",
+        "text": "发现",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "images/icon/home_footer1.png"
+      },
+      {
+        "pagePath": "pages/study_index/study_index",
+        "text": "学习",
+        "iconPath": "images/icon/home_footer2.png",
+        "selectedIconPath": "images/icon/icn_newgame_press.png"
+      },
+      {
+        "pagePath": "pages/mine_index/mine_index",
+        "text": "我的",
+        "iconPath": "images/icon/home_footer3.png",
+        "selectedIconPath": "images/icon/icn_rank_press.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "sitemapLocation": "sitemap.json"
+}

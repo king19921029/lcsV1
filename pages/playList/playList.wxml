@@ -1,0 +1,29 @@
+<view class='playList_box border_top_gray'>
+      <view class='space-between com-width com-padding audition_list border_bottom_gray'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>1.婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+      </view>
+      <view class='space-between com-width com-padding audition_list border_bottom_gray'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>1.婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+      </view>
+      <view class='space-between com-width com-padding audition_list border_bottom_gray'>
+              <view class='display-flex'>
+                  <image class='play_img' src='../../images/music/play_0.png'></image>
+                  <view class='com-som-margin-left'>
+                      <view class='med-font'>1.婚前财产锁定与规划</view>
+                      <view class='som_font color_gray'>00:23：10</view>
+                  </view>
+              </view>
+      </view>
+</view>

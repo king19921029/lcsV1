@@ -1,0 +1,168 @@
+
+<scroll-view class="home_box" scroll-x style="width: 100%">
+    <!-- 音频迷你播放 -->
+    <view id='mic_icon' wx:if="{{isMicPlay}}" bindtap='mic_iconTap'>
+      <image lazy-load="true" src='../../images/music/mic_icon.png'></image>  
+    </view>
+
+    <view>
+      <!--banner  -->
+      <swiper class='swipers com-width' indicator-dots='ture'>
+          <swiper-item  bindtap='com_tap' wx:for="{{banner}}" wx:key="" bank wx:for-item="item"  data-text="{{item.linkText}}" data-type="{{item.linkType}}">
+         
+          <image lazy-load="true" src="{{item.picUrl}}" data-id="{{item.id}}" class="slide-image" width="100%" />
+            
+          </swiper-item>
+      </swiper>
+      <!-- 分类 -->
+      <view class='classify_block'>
+        <view class='dl' bindtap='classify_tap' wx:for="{{homeClass}}" wx:key="" wx:for-index="index" wx:for-item="item" data-type="{{item.linkType}}" data-id="{{item.labelId}}">
+            <view class='dt'><image src="{{item.iconUrl}}"></image></view>
+            <view class='dd'>{{item.iconTitle}}</view>
+        </view>
+      </view>
+    </view>
+        
+
+    <!--通知  -->
+    <view class='notice space-between com-width com-padding border_top_gray border_bottom_gray' wx:if="{{notice != ''}}">
+        <view class='medium_font ' bindtap='scroll_tab'>最新通知</view>
+        <view class='scrolls'>
+             <swiper class='font_rb' autoplay="ture" vertical="true" interval="600000">
+              <swiper-item bindtap='com_tap' wx:for="{{notice}}" wx:key="" wx:for-index="index" wx:for-item="item" 
+              data-text="{{item.linkText}}" data-type="{{item.linkType}}">
+                  {{item.title}}
+              </swiper-item>
+            </swiper> 
+        </view>
+    </view>    
+
+    <!-- 包装信息  -->
+    <view wx:for="{{homeData}}" wx:key="" wx:for-index="index" wx:for-item="item"
+    >
+        <!--查看全部  -->
+        <view hidden="{{itemSon.linkText=='3'}}" class=' com-padding space-between com-width border_top_gray'>
+            <view class='medium_font'>{{item.title}}</view>
+            <view wx:if="{{item.show != 0}}" class='all_plan font_rb' bindtap='go_com_allclass' data-title="{{item.title}}" data-id="{{item.id}}">
+              查看全部
+            </view>
+        </view>
+
+        <!--列表  -->
+        <view wx:for="{{item.skuList}}" wx:key="" 
+          wx:for-index="index" wx:for-item="itemSon" >
+            <!--学习计划  -->
+            <view wx:if="{{itemSon.templateType == 0}}" bindtap='com_tap' 
+              data-text="{{itemSon.linkText}}" data-type="{{itemSon.linkType}}">
+
+              <view class='com-width space-between'>
+                  <image lazy-load="true" src='{{itemSon.tHeaderUrl}}' class='study_img'></image> 
+                  <view class='study_msg'>
+                      <view class='study_headers overflow'>{{itemSon.tName}}  {{itemSon.tTitle}}</view>
+                      <view class='color_gray study_people_num som_font'>{{itemSon.learnCount}}</view>
+                  </view>
+                  <view wx:if="{{platform != 'ios'}}" 
+                    class='som_font study_pic color_green'>
+                      <view wx:if="{{itemSon.isBuy == 1}}" class='color_cheng'>
+                          {{itemSon.price}}
+                      </view>
+                      <view wx:else class='color_green'>{{itemSon.price}}</view>
+                  </view>
+                  <view wx:else class='som_font study_pic color_green'>
+                      <view wx:if="{{itemSon.isBuy == 1}}" class='color_green'>
+                          查看详情
+                      </view>
+                      <view wx:else class='color_green'>查看详情</view>
+                  </view>
+              </view>
+              <image lazy-load="true" class='study_bigImg com-width' src='{{itemSon.picUrl}}'></image>
+
+            </view>
+
+            <!--专题课 最新样式 -->
+            <view wx:if="{{itemSon.templateType == 1}}" bindtap='com_tap' 
+              data-text="{{itemSon.linkText}}" data-type="{{itemSon.linkType}}">
+
+              <view class='com-width com_list'>
+                  <view class='phone'><image lazy-load="true" src='{{itemSon.picUrl}}'></image></view>
+
+                  <!-- 中间 -->
+                  <view class='msg'>
+                      <view class='msg_headr'>
+                        <text class='extent' wx:if="{{itemSon.extent}}">{{itemSon.extent}}</text>
+                        {{itemSon.cwTitle}} 
+                      </view>
+                      <view class='msg_content overflow color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='color_green' wx:if="{{itemSon.label}}">
+                          <text class='label' wx:for="{{itemSon.label}}" wx:key="" wx:for-index="index" wx:for-item="itemLabel">{{itemLabel}}</text>
+                      </view>
+                      <view class='msg_people overflow {{itemSon.label? "":"is_line"}}'>{{itemSon.tName}} {{itemSon.tTitle}}</view>
+                  </view>
+
+                  <!-- 右边 -->
+                  <view wx:if="{{platform != 'ios' && platform != 'devtools'}}"
+                   class='com_list_rigth'>
+                        <view>
+                            <view wx:if="{{itemSon.isBuy == 1}}" class='color_cheng'>
+                              {{itemSon.price}}
+                            </view>
+                            <view wx:else class='color_green'>{{itemSon.price}}</view>
+
+                            <view wx:if="{{itemSon.isBuy == 1}}" 
+                              class='isBuy color_gray'>
+                              {{itemSon.oldPrice}}
+                            </view>
+                           
+                        </view>
+
+        
+                        <view class='lh_view overflow color_gray'>
+                          {{itemSon.learnCount}}
+                        </view>
+                  </view>
+
+                  <view wx:else class='com_list_rigth'>
+                        <view>
+                            <view wx:if="{{itemSon.isBuy == 1}}" class='color_cheng'>
+                              {{itemSon.price}}
+                            </view>
+                            <view wx:else class='color_green'>查看详情</view>
+                        </view>
+                        <view class='lh_view overflow color_gray'>
+                          {{itemSon.learnCount}}
+                        </view>
+                  </view>
+              </view>
+              
+            </view>
+
+            <!--订阅专栏  -->
+            <view wx:if="{{itemSon.templateType == 2}}" bindtap='go_columnDetails'>
+              <view class='com-width com_list'>
+                  <view class='phone'><image lazy-load="true" src='{{itemSon.tHeaderUrl}}'></image></view>
+                  <view class='msg'>
+                      <view class='msg_headr overflow'>{{itemSon.cwTitle}} </view>
+                      <view class='msg_content color_gray'>{{itemSon.cwInfo}}</view>
+                      <view class='msg_people overflow'>{{itemSon.tName}}  {{itemSon.tTitle}}</view>
+                  </view>
+                  <view class='com_list_rigth'>
+                        <view class='color_green'>{{itemSon.price}}</view>
+                        <view class='lh_view color_gray'>{{itemSon.learnCount}}</view>
+                  </view>
+              </view>
+            </view>
+            <!--  -->
+            <view wx:if="{{itemSon.templateType == 4}}" bindtap='com_tap' 
+              data-text="{{itemSon.linkText}}" data-type="{{itemSon.linkType}}">
+
+              <view>
+                  <image lazy-load="true" class='com-width templateType4' src='{{itemSon.picUrl}}'>
+                  </image>
+              </view>
+              
+            </view>
+        
+        </view>
+    </view>  
+
+</scroll-view>

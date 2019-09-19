@@ -1,0 +1,262 @@
+
+Page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;  
+  display: block;     
+  font-size: 30rpx;
+}
+.herders{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  padding: 10rpx 0 20rpx 0;
+}
+#mic_video{
+}
+.detalis_scroll{
+  height: 45vh;
+}
+.detalis_scroll_x{
+  height: 52vh;
+}
+
+/* 类型 */
+.mic_type{
+  /* width: 306rpx; */
+  border: 1px solid #4daa7b;
+  display: flex;
+  align-items: center;
+  border-radius: 10rpx;
+}
+.mic_type text{
+  width:150rpx;
+  text-align: center;
+  padding: 10rpx 0;
+}
+/* 音频盒子 */
+#audioBox,#videoBox{
+  border-bottom: 20rpx solid #f2f2f2;
+  padding-bottom: 20rpx;
+}
+
+.animation_img{
+  width: 200rpx;
+  height: 200rpx;
+  margin:50rpx 0 50rpx 0;
+  border-radius: 50%;
+  
+}
+.animation_img_isShow{
+  animation: headRotate 8s linear infinite;
+}
+@keyframes headRotate{
+  0% {transform: rotate(0deg);}
+  /* 50% {transform: rotate(180deg);} */
+  100% {transform: rotate(360deg);}
+}
+.mic_icon{
+  width:50rpx;
+  height:50rpx;
+  position: absolute;
+}
+.right_icon{
+  right:20%;
+}
+.left_icon{
+  left: 20%;
+}
+.videoPic{
+  width: 220rpx;
+  height: 120rpx;
+}
+.audio_list{
+  width: 80%;
+}
+.last_icon{
+  display: flex;
+}
+.last_icon image{
+  width: 36rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.video_list{
+  width: 80%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 40rpx;
+}
+.audio_animation_box{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 360rpx;
+}
+/* 音频图片盒子 */
+.audio_img_box{
+  position: absolute;
+}
+.audio_img_box image{
+  width: 80rpx;
+  height: 80rpx;
+}
+/* .paly_icon{
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  top: 40%;
+  left: 41%;
+} */
+.slider{
+  margin:0 0 0 2%;
+  width: 98%;
+}
+
+video{
+  width: 100%;
+  height: 100%;
+}
+
+.audioBox_bottom{
+  margin-top: 30rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.audioBox_bottom .audioBox_bottom_title{
+  width: 65%;
+}
+.overflow_wrap{
+  overflow:word-break;
+}
+.audioBox_bottom .audioBox_bottom_time{
+  width: 35%;
+}
+.detailsBox_font{
+  margin-top: 20rpx;
+}
+.detailsBox_title{
+  display: flex;
+  justify-content: space-between;
+}
+.detailsBox_title view{
+  display: block;
+  width: 50%;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.detailsBox_title text{
+    padding:19rpx 0;
+}
+.border_bottom_green{
+  border-bottom: 1px solid #4daa7b;   
+}
+.detailsBox_mic{
+  width: 96%;
+  margin-left: 4%;
+  padding: 30rpx 0;
+}
+.audioPic{
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 40rpx;
+}
+.detailsBox_mic_time{
+  font-size: 28rpx;
+}
+
+
+
+
+/*video  */
+.my_video{
+  z-index: 10;
+}
+.scroll_view{
+   height:100vh;  
+}
+.manuscript{  
+  height:100vh; 
+} 
+.manuscript_date{
+  margin-top: 10rpx;
+}
+.for_font{
+  font-size: 32rpx;
+  line-height: 60rpx;
+  padding-bottom: 60rpx;
+  text-indent: 64rpx;
+}
+.for_img{
+  width: 100%;
+  padding-bottom: 60rpx;
+}
+.mini_audio_title{
+  width: 60%;
+}
+.audio_time{
+  margin-left: 60rpx;
+}
+.manuscript_footer{
+  font-size: 28rpx;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.manuscript_footer image{
+  width: 66rpx;
+  height: 66rpx;
+  margin-bottom: 20rpx;
+}
+.wxParse-p{
+  width: 92% !important;
+  margin-left: 4% !important;
+  line-height:60rpx !important;
+}
+.wxParse-span{
+  font-size: 32rpx !important;
+}
+.wxParse-p image{
+  width: 100% !important;
+ /* height: 100% !important; */
+}
+.wxParse-strong{
+  text-indent: 0 !important;
+}
+
+.video_box{
+  height:400rpx;
+  margin-top: 60rpx;
+}
+.audio_paly_box{
+  height: 100vh;
+  position: absolute; 
+  z-index:999; 
+  width: 100%;
+  background: rgba(0,0,0,0.8); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.audio_paly_box video{
+  width: 100%;
+  height: 50%;
+}
+
+.video_right{
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.video_no_text{
+  width: 40rpx;
+  height: 40rpx;
+}

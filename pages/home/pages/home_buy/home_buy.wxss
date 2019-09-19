@@ -1,0 +1,65 @@
+.buy_box{
+  background: #fafafa;
+  height: 100vh;
+}
+.buy_header_font{
+  font-size: 32rpx;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+.buy_shop{
+  display: flex;
+  padding: 20rpx 0;
+}
+.buy_shop .msg{
+  width:75%;
+  margin-left: 40rpx;
+}
+.msg .msg_header{
+  font-size: 32rpx;
+}
+.som_margin{
+  margin-top: 20rpx;
+}
+
+.img_type{
+  margin-right:30rpx; 
+}
+.buy_type image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.com_type{
+  width: 87%;
+  font-size: 36rpx;
+}
+.com_type_icon{
+  width: 50rpx;
+  height: 50rpx;
+  border: 4rpx solid #01ae79;
+  border-radius: 50%;
+}
+/*购买须知  */
+.notice{
+  line-height: 45rpx;
+}
+.notice_title{
+  padding-top: 20rpx;
+}
+.buy_box_footer{
+  font-size: 30rpx;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 15rpx;
+  border-top: 1px solid #dbdbdb;
+  padding-top: 15rpx;
+}
+.confirm_buy{
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  padding: 20rpx 0;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}

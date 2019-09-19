@@ -1,0 +1,18 @@
+<view class='register bg_gray'>
+      <view class='bg_fff'> 
+        <view class='com-width display-flex com-padding_som border_bottom_gray'>
+          <view>手机号</view>
+          <view><input placeholder='请输入手机号' bindinput='phoneChange'></input></view>
+        </view>
+
+        <view class='com-width display-flex com-padding_som'>
+            <view>验证码</view>
+            <view><input placeholder='请输入验证码'></input></view>
+           
+            <view class='code' bindtap='codeTap' wx-if="{{codeBtn}}">获取验证码</view> 
+            <view class='code' bindtap='codeTap' wx-if="{{timeBtn}}">请{{second}}后再试</view>
+        </view> 
+      </view>
+      
+      <view class='confirm bg_green com-width'>确定</view>
+</view>
